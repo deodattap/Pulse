@@ -1,0 +1,4 @@
+Model,Type,Accuracy,Precision,Recall,F1_Score,Features,Train_Rows,Test_Rows
+Logistic Regression,Static Baseline,46.31,49.97,46.31,47.73,35,All (static),20040
+Random Forest,Static Baseline,54.49,47.84,54.49,47.01,35,All (static),20040
+XGBoost,Static Baseline,43.6,48.61,43.6,45.25,35,All (static),20040
