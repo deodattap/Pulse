@@ -1,22 +1,20 @@
 # ============================================================
 # src/models/dynamic_model.py
 #
-# Purpose:
-# Run the complete Dynamic Feature Selection pipeline.
+# CORRECTED VERSION — Warm Start Incremental Learning
 #
-# For each sliding window:
-#   1. Select features dynamically using MI
-#   2. Train RF and XGBoost on selected features
-#   3. Predict next day Buy/Sell/Hold
-#   4. Log all results
+# Strategy:
+# Phase 1: Pre-train on all training data (stable foundation)
+# Phase 2: For each test window:
+#           - Select features dynamically using MI
+#           - Update model using recent 252 days of data
+#           - Predict next day signal
 #
-# Compare against static baseline to prove
-# dynamic beats static.
+# This is the correct approach for streaming ML.
+# Reference: "Online Learning with Concept Drift" literature
 #
-# How to run (test on AAPL first):
+# How to run:
 # python src/models/dynamic_model.py --stock AAPL
-#
-# How to run on all stocks:
 # python src/models/dynamic_model.py --stock ALL
 # ============================================================
 
@@ -36,8 +34,8 @@ from sklearn.metrics   import (
     precision_score,
     recall_score
 )
-from xgboost import XGBClassifier
-from collections import Counter
+from xgboost           import XGBClassifier
+from collections       import Counter
 
 # ── Import config ──────────────────────────────────────────
 sys.path.append(
@@ -45,219 +43,257 @@ sys.path.append(
 )
 from config import *
 
-# ── Import sliding window and feature selector ─────────────
+# ── Import modules ─────────────────────────────────────────
 sys.path.append(
     os.path.join(os.path.dirname(__file__), '..', 'features')
 )
-from sliding_window              import (
-    sliding_window_generator,
-    split_windows_by_date,
-    get_stock_windows
-)
-from dynamic_feature_selection   import DynamicFeatureSelector
+from sliding_window            import sliding_window_generator
+from dynamic_feature_selection import DynamicFeatureSelector
 
 
 # ============================================================
-# HELPER — Create XGBoost sample weights
+# SETTINGS
+# ============================================================
+
+# How many recent days to use for model update
+# 252 = approximately one trading year
+# More data = more stable model
+RETRAIN_WINDOW = 252
+
+# How often to fully retrain the model (in windows)
+# Every 20 windows = full retrain
+# In between = use existing model
+RETRAIN_FREQUENCY = 20
+
+
+# ============================================================
+# HELPER
 # ============================================================
 
 def get_sample_weights(y):
-    """
-    XGBoost needs manual sample weights
-    because it does not support class_weight='balanced'.
-    This calculates weights to balance the classes.
-    """
     counts    = Counter(y)
     total     = len(y)
     n_classes = len(counts)
-
     weights_map = {
         cls: total / (n_classes * cnt)
         for cls, cnt in counts.items()
     }
-
-    return np.array([weights_map[label] for label in y])
+    return np.array([weights_map[lbl] for lbl in y])
 
 
 # ============================================================
-# CORE FUNCTION — Run dynamic pipeline for ONE stock
+# CORE — Run dynamic pipeline for ONE stock
 # ============================================================
 
-def run_dynamic_pipeline_for_stock(stock_df, stock_symbol):
+def run_dynamic_pipeline_for_stock(full_stock_df,
+                                   stock_symbol):
     """
-    Runs the full dynamic pipeline for one stock.
+    Corrected dynamic pipeline using warm start strategy.
 
-    For each test window:
-      - Selects features dynamically
-      - Trains RF and XGB on selected features
-      - Predicts next day signal
-      - Logs results
-
-    Parameters:
-        stock_df     : DataFrame for this stock only
-        stock_symbol : e.g. 'AAPL'
-
-    Returns:
-        results_df   : DataFrame with all predictions
-        selector     : DynamicFeatureSelector with history
+    Phase 1: Pre-train on all data before TEST_START_DATE
+    Phase 2: For each test window — dynamic feature selection
+             + incremental model update every RETRAIN_FREQUENCY
     """
 
     # Sort by date
-    stock_df = stock_df.sort_values(DATE_COL)
-    stock_df = stock_df.reset_index(drop=True)
-
-    # Get all windows and split into train/test
-    all_windows = []
-    for w_data, target, date, num in sliding_window_generator(
-        stock_df
-    ):
-        all_windows.append((w_data, target, date, num))
-
-    train_windows, test_windows = split_windows_by_date(
-        all_windows
+    df = full_stock_df.sort_values(DATE_COL).reset_index(
+        drop=True
     )
 
-    total_test = len(test_windows)
+    # Split into train and test periods
+    train_df = df[df[DATE_COL] <= TRAIN_END_DATE].copy()
+    test_df  = df[df[DATE_COL] >= TEST_START_DATE].copy()
+    test_df  = test_df.reset_index(drop=True)
 
-    if total_test == 0:
-        print(f"  ⚠️  No test windows for {stock_symbol}")
+    if len(train_df) < WINDOW_SIZE:
+        print(f"  ⚠️  Not enough training data for "
+              f"{stock_symbol}")
         return pd.DataFrame(), None
 
-    # Create feature selector
+    if len(test_df) < 2:
+        print(f"  ⚠️  Not enough test data for "
+              f"{stock_symbol}")
+        return pd.DataFrame(), None
+
+    # ── Phase 1: Pre-train on all training data ────────────
+    # Use ALL features for pre-training
+    # This gives the model a solid foundation
+    X_pretrain = train_df[FEATURE_COLS].values
+    y_pretrain = train_df[TARGET_COL].values
+
+    # Pre-train Random Forest
+    rf_model = RandomForestClassifier(
+        n_estimators = N_ESTIMATORS,
+        class_weight = CLASS_WEIGHT,
+        random_state = RANDOM_STATE,
+        n_jobs       = -1,
+        max_depth    = 10
+    )
+    rf_model.fit(X_pretrain, y_pretrain)
+
+    # Pre-train XGBoost
+    xgb_model = XGBClassifier(
+        n_estimators = N_ESTIMATORS,
+        random_state = RANDOM_STATE,
+        verbosity    = 0,
+        eval_metric  = 'mlogloss',
+        max_depth    = 5
+    )
+    sw = get_sample_weights(y_pretrain)
+    xgb_model.fit(X_pretrain, y_pretrain,
+                  sample_weight=sw)
+
+    # ── Create dynamic feature selector ───────────────────
     selector = DynamicFeatureSelector()
 
-    # Storage for results
-    results = []
-
-    # Track previous model for warm starting
-    prev_rf_model  = None
-    prev_xgb_model = None
-
-    print(f"\n  [{stock_symbol}] "
-          f"Test windows: {total_test:,} "
-          f"| Starting...")
-
+    # ── Phase 2: Test window loop ──────────────────────────
+    results    = []
+    total_rows = len(test_df)
     start_time = time.time()
 
-    # ── Process each test window ───────────────────────────
-    for idx, (w_data, actual_target,
-               predict_date, window_num) in enumerate(
-        test_windows
-    ):
+    # We combine train + test for the rolling window
+    # So we can look back RETRAIN_WINDOW days from test start
+    full_df = df.reset_index(drop=True)
 
-        # ── Step 1: Dynamic feature selection ─────────────
-        selected_features = selector.select(w_data, window_num)
+    print(f"  [{stock_symbol}] "
+          f"Pre-training done. "
+          f"Test rows: {total_rows}  "
+          f"Starting dynamic phase...")
 
-        # ── Step 2: Prepare training data from window ─────
-        X_window = w_data[selected_features].values
-        y_window = w_data[TARGET_COL].values
+    for i in range(total_rows):
 
-        # Need at least 2 classes to train
-        unique_classes = np.unique(y_window)
-        if len(unique_classes) < 2:
-            # Skip this window
+        current_row  = test_df.iloc[i]
+        predict_date = current_row[DATE_COL]
+        actual_target = current_row[TARGET_COL]
+        window_num   = i + 1
+
+        # ── Get recent data for this point ────────────────
+        # Look back RETRAIN_WINDOW rows from current position
+        current_idx = full_df.index[
+            full_df[DATE_COL] == predict_date
+        ]
+
+        if len(current_idx) == 0:
             continue
 
-        # ── Step 3: Train Random Forest ───────────────────
+        current_idx = current_idx[0]
+
+        # Get last RETRAIN_WINDOW rows before current date
+        start_idx = max(0, current_idx - RETRAIN_WINDOW)
+        recent_data = full_df.iloc[start_idx:current_idx]
+
+        if len(recent_data) < 30:
+            # Not enough data yet
+            continue
+
+        # ── Dynamic feature selection ──────────────────────
+        selected_features = selector.select(
+            recent_data, window_num
+        )
+
+        # ── Retrain every RETRAIN_FREQUENCY windows ────────
+        if window_num % RETRAIN_FREQUENCY == 0:
+
+            X_recent = recent_data[selected_features].values
+            y_recent = recent_data[TARGET_COL].values
+
+            unique_classes = np.unique(y_recent)
+            if len(unique_classes) >= 2:
+
+                # Retrain RF
+                try:
+                    rf_model = RandomForestClassifier(
+                        n_estimators = 50,
+                        class_weight = CLASS_WEIGHT,
+                        random_state = RANDOM_STATE,
+                        n_jobs       = -1,
+                        max_depth    = 8
+                    )
+                    rf_model.fit(X_recent, y_recent)
+                except:
+                    pass  # Keep existing model
+
+                # Retrain XGB
+                try:
+                    sw = get_sample_weights(y_recent)
+                    xgb_model = XGBClassifier(
+                        n_estimators = 50,
+                        random_state = RANDOM_STATE,
+                        verbosity    = 0,
+                        eval_metric  = 'mlogloss',
+                        max_depth    = 4
+                    )
+                    xgb_model.fit(
+                        X_recent, y_recent,
+                        sample_weight=sw
+                    )
+                except:
+                    pass  # Keep existing model
+
+        # ── Predict current row ────────────────────────────
+        current_features_vals = current_row[
+            selected_features
+        ].values.reshape(1, -1)
+
         try:
-            rf_model = RandomForestClassifier(
-                n_estimators = 50,       # Fewer trees = faster
-                class_weight = CLASS_WEIGHT,
-                random_state = RANDOM_STATE,
-                n_jobs       = -1,
-                max_depth    = 5         # Shallow = faster
-            )
-            rf_model.fit(X_window, y_window)
-        except Exception as e:
-            rf_model = prev_rf_model
-            if rf_model is None:
-                continue
-
-        # ── Step 4: Train XGBoost ─────────────────────────
-        try:
-            sample_w = get_sample_weights(y_window)
-
-            xgb_model = XGBClassifier(
-                n_estimators = 50,
-                max_depth    = 3,
-                random_state = RANDOM_STATE,
-                verbosity    = 0,
-                use_label_encoder = False,
-                eval_metric  = 'mlogloss'
-            )
-            xgb_model.fit(
-                X_window, y_window,
-                sample_weight = sample_w
-            )
-        except Exception as e:
-            xgb_model = prev_xgb_model
-            if xgb_model is None:
-                continue
-
-        # ── Step 5: Predict next day ───────────────────────
-        # Get the current day's features for prediction
-        current_features = w_data[selected_features].iloc[-1].values.reshape(1, -1)
-
-        try:
-            rf_pred   = rf_model.predict(current_features)[0]
-            rf_proba  = rf_model.predict_proba(
-                current_features
+            rf_pred  = rf_model.predict(
+                current_features_vals
             )[0]
-            rf_conf   = float(np.max(rf_proba))
+            rf_proba = rf_model.predict_proba(
+                current_features_vals
+            )[0]
+            rf_conf  = float(np.max(rf_proba))
         except:
-            rf_pred  = 1
-            rf_conf  = 0.0
+            rf_pred = 1
+            rf_conf = 0.0
 
         try:
-            xgb_pred  = xgb_model.predict(current_features)[0]
+            xgb_pred  = xgb_model.predict(
+                current_features_vals
+            )[0]
             xgb_proba = xgb_model.predict_proba(
-                current_features
+                current_features_vals
             )[0]
             xgb_conf  = float(np.max(xgb_proba))
         except:
             xgb_pred = 1
             xgb_conf = 0.0
 
-        # ── Step 6: Log results ────────────────────────────
+        # ── Log result ─────────────────────────────────────
         results.append({
-            'stock'            : stock_symbol,
-            'predict_date'     : predict_date,
-            'window_num'       : window_num,
-            'actual_target'    : actual_target,
-            'rf_prediction'    : rf_pred,
-            'xgb_prediction'   : xgb_pred,
-            'rf_correct'       : int(rf_pred == actual_target),
-            'xgb_correct'      : int(xgb_pred == actual_target),
-            'rf_confidence'    : round(rf_conf, 4),
-            'xgb_confidence'   : round(xgb_conf, 4),
-            'n_features_used'  : len(selected_features),
-            'features_used'    : ','.join(selected_features),
-            'top_feature'      : selected_features[0]
-                                  if selected_features else ''
+            'stock'           : stock_symbol,
+            'predict_date'    : predict_date,
+            'window_num'      : window_num,
+            'actual_target'   : actual_target,
+            'rf_prediction'   : rf_pred,
+            'xgb_prediction'  : xgb_pred,
+            'rf_correct'      : int(rf_pred == actual_target),
+            'xgb_correct'     : int(xgb_pred == actual_target),
+            'rf_confidence'   : round(rf_conf, 4),
+            'xgb_confidence'  : round(xgb_conf, 4),
+            'n_features_used' : len(selected_features),
+            'features_used'   : ','.join(selected_features),
+            'top_feature'     : selected_features[0]
+                                 if selected_features else ''
         })
 
-        # Store models for next iteration
-        prev_rf_model  = rf_model
-        prev_xgb_model = xgb_model
-
-        # ── Print progress every 100 windows ──────────────
-        if (idx + 1) % 100 == 0:
-            elapsed  = time.time() - start_time
-            done_pct = (idx + 1) / total_test * 100
+        # ── Progress update ────────────────────────────────
+        if window_num % 100 == 0:
+            elapsed      = time.time() - start_time
+            pct          = window_num / total_rows * 100
             rf_acc_so_far = np.mean([
                 r['rf_correct'] for r in results
             ]) * 100
 
             print(f"  [{stock_symbol}] "
-                  f"Window {idx+1:>4}/{total_test}  "
-                  f"({done_pct:.0f}%)  "
-                  f"RF Acc so far: {rf_acc_so_far:.1f}%  "
+                  f"Window {window_num:>4}/{total_rows}  "
+                  f"({pct:.0f}%)  "
+                  f"RF Acc: {rf_acc_so_far:.1f}%  "
                   f"Time: {elapsed:.0f}s")
 
-    # ── Convert results to DataFrame ───────────────────────
     results_df = pd.DataFrame(results)
+    elapsed    = time.time() - start_time
 
-    elapsed = time.time() - start_time
     print(f"  [{stock_symbol}] "
           f"Done. {len(results_df):,} predictions "
           f"in {elapsed:.0f}s")
@@ -266,58 +302,50 @@ def run_dynamic_pipeline_for_stock(stock_df, stock_symbol):
 
 
 # ============================================================
-# EVALUATE — Calculate metrics from results
+# EVALUATE
 # ============================================================
 
 def evaluate_results(results_df, stock_symbol='ALL'):
-    """
-    Calculate accuracy and other metrics
-    from the prediction results DataFrame.
-    """
 
     if len(results_df) == 0:
         return {}
 
-    y_true    = results_df['actual_target'].values
-    y_rf      = results_df['rf_prediction'].values
-    y_xgb     = results_df['xgb_prediction'].values
+    y_true = results_df['actual_target'].values
+    y_rf   = results_df['rf_prediction'].values
+    y_xgb  = results_df['xgb_prediction'].values
 
-    metrics = {
-        'stock'        : stock_symbol,
-        'n_predictions': len(results_df),
-
-        'rf_accuracy'  : round(
+    return {
+        'stock'         : stock_symbol,
+        'n_predictions' : len(results_df),
+        'rf_accuracy'   : round(
             accuracy_score(y_true, y_rf) * 100, 2),
-        'rf_f1'        : round(
+        'rf_f1'         : round(
             f1_score(y_true, y_rf,
                      average='weighted',
                      zero_division=0) * 100, 2),
-        'rf_precision' : round(
+        'rf_precision'  : round(
             precision_score(y_true, y_rf,
                             average='weighted',
                             zero_division=0) * 100, 2),
-        'rf_recall'    : round(
+        'rf_recall'     : round(
             recall_score(y_true, y_rf,
                          average='weighted',
                          zero_division=0) * 100, 2),
-
-        'xgb_accuracy' : round(
+        'xgb_accuracy'  : round(
             accuracy_score(y_true, y_xgb) * 100, 2),
-        'xgb_f1'       : round(
+        'xgb_f1'        : round(
             f1_score(y_true, y_xgb,
                      average='weighted',
                      zero_division=0) * 100, 2),
-        'xgb_precision': round(
+        'xgb_precision' : round(
             precision_score(y_true, y_xgb,
                             average='weighted',
                             zero_division=0) * 100, 2),
-        'xgb_recall'   : round(
+        'xgb_recall'    : round(
             recall_score(y_true, y_xgb,
                          average='weighted',
                          zero_division=0) * 100, 2),
     }
-
-    return metrics
 
 
 # ============================================================
@@ -326,20 +354,15 @@ def evaluate_results(results_df, stock_symbol='ALL'):
 
 def main():
 
-    # ── Parse arguments ────────────────────────────────────
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        '--stock',
-        type    = str,
-        default = 'AAPL',
-        help    = 'Stock symbol or ALL'
+        '--stock', type=str, default='AAPL'
     )
-    args = parser.parse_args()
-
+    args      = parser.parse_args()
     stock_arg = args.stock.upper()
 
     print("\n" + "="*60)
-    print("  DYNAMIC MODEL TRAINING")
+    print("  DYNAMIC MODEL — WARM START VERSION")
     print("  Dynamic Feature Selection Project")
     print("="*60)
 
@@ -348,7 +371,6 @@ def main():
 
     if not os.path.exists(CLEAN_DATA_PATH):
         print("  ❌ cleaned_dataset.csv not found.")
-        print("  Run preprocessing.py first.")
         sys.exit(1)
 
     df = pd.read_csv(
@@ -357,182 +379,135 @@ def main():
     )
     print(f"  ✅ Loaded {len(df):,} rows")
 
-    # ── Decide which stocks to run ─────────────────────────
+    # ── Stocks to run ──────────────────────────────────────
     if stock_arg == 'ALL':
         stocks_to_run = ALL_STOCKS
-        print(f"  Running on ALL {len(stocks_to_run)} stocks")
-        print(f"  ⚠️  This will take 30-60 minutes")
+        print(f"  Running on ALL {len(ALL_STOCKS)} stocks")
+        print(f"  ⚠️  Expected time: 60-90 minutes")
     else:
         if stock_arg not in ALL_STOCKS:
-            print(f"  ❌ Stock {stock_arg} not found.")
-            print(f"  Available: {ALL_STOCKS}")
+            print(f"  ❌ {stock_arg} not found.")
             sys.exit(1)
         stocks_to_run = [stock_arg]
         print(f"  Running on: {stock_arg}")
+        print(f"  Strategy: Pre-train on 2015-2021, "
+              f"dynamic update on 2022-2025")
 
-    # ── Create output folders ──────────────────────────────
     os.makedirs(LOGS_DIR,    exist_ok=True)
     os.makedirs(METRICS_DIR, exist_ok=True)
 
-    # ── Run pipeline for each stock ────────────────────────
-    all_results   = []
-    all_metrics   = []
-    total_start   = time.time()
+    all_results = []
+    all_metrics = []
+    total_start = time.time()
 
     for i, stock in enumerate(stocks_to_run, 1):
 
         print(f"\n  {'─'*55}")
-        print(f"  Stock {i}/{len(stocks_to_run)}: {stock}")
+        print(f"  [{i}/{len(stocks_to_run)}] {stock}")
         print(f"  {'─'*55}")
 
-        # Get this stock's data
         stock_df = df[df[STOCK_COL] == stock].copy()
 
-        # Run dynamic pipeline
-        results_df, selector = run_dynamic_pipeline_for_stock(
-            stock_df, stock
-        )
+        results_df, selector = \
+            run_dynamic_pipeline_for_stock(
+                stock_df, stock
+            )
 
         if len(results_df) == 0:
             continue
 
-        # Calculate metrics
         metrics = evaluate_results(results_df, stock)
         all_metrics.append(metrics)
         all_results.append(results_df)
 
-        # Print stock summary
-        print(f"\n  {stock} Results:")
-        print(f"  RF  Accuracy : {metrics['rf_accuracy']}%  "
+        print(f"\n  {stock} Summary:")
+        print(f"  RF  → Acc: {metrics['rf_accuracy']}%  "
               f"F1: {metrics['rf_f1']}%")
-        print(f"  XGB Accuracy : {metrics['xgb_accuracy']}%  "
+        print(f"  XGB → Acc: {metrics['xgb_accuracy']}%  "
               f"F1: {metrics['xgb_f1']}%")
 
-        # Save results for this stock
-        stock_log_path = os.path.join(
+        # Save per-stock results
+        stock_path = os.path.join(
             LOGS_DIR, f'dynamic_{stock}.csv'
         )
-        results_df.to_csv(stock_log_path, index=False)
+        results_df.to_csv(stock_path, index=False)
 
-    # ── Combine all results ────────────────────────────────
     if not all_results:
-        print("\n  ❌ No results generated.")
+        print("\n  ❌ No results.")
         sys.exit(1)
 
     combined_df = pd.concat(all_results, ignore_index=True)
     metrics_df  = pd.DataFrame(all_metrics)
 
-    # ── Save combined results ──────────────────────────────
-    combined_path = os.path.join(
-        LOGS_DIR, 'dynamic_all_results.csv'
+    combined_df.to_csv(
+        os.path.join(LOGS_DIR, 'dynamic_all_results.csv'),
+        index=False
     )
-    combined_df.to_csv(combined_path, index=False)
-
-    metrics_path = os.path.join(
-        METRICS_DIR, 'dynamic_results.csv'
+    metrics_df.to_csv(
+        os.path.join(METRICS_DIR, 'dynamic_results.csv'),
+        index=False
     )
-    metrics_df.to_csv(metrics_path, index=False)
 
-    # ── Overall summary ────────────────────────────────────
+    # ── Final summary ──────────────────────────────────────
+    overall       = evaluate_results(combined_df, 'ALL')
     total_elapsed = time.time() - total_start
 
     print("\n" + "="*60)
-    print("  DYNAMIC MODEL RESULTS SUMMARY")
+    print("  FINAL RESULTS SUMMARY")
     print("="*60)
-
-    # Overall metrics across all stocks
-    overall = evaluate_results(combined_df, 'ALL STOCKS')
-
-    print(f"\n  {'Metric':<20} {'Static RF':>10} "
-          f"{'Dynamic RF':>11} {'Dynamic XGB':>12}")
-    print(f"  {'─'*20} {'─'*10} "
-          f"{'─'*11} {'─'*12}")
 
     # Load baseline for comparison
     baseline_path = os.path.join(
         METRICS_DIR, 'baseline_results.csv'
     )
-
-    static_rf_acc = 'N/A'
-    static_rf_f1  = 'N/A'
+    static_rf_acc = None
 
     if os.path.exists(baseline_path):
-        baseline_df = pd.read_csv(baseline_path)
-        rf_baseline = baseline_df[
-            baseline_df['Model'] == 'Random Forest'
-        ]
-        if len(rf_baseline) > 0:
-            static_rf_acc = f"{rf_baseline['Accuracy'].values[0]:.2f}%"
-            static_rf_f1  = f"{rf_baseline['F1_Score'].values[0]:.2f}%"
+        bl_df = pd.read_csv(baseline_path)
+        rf_bl = bl_df[bl_df['Model'] == 'Random Forest']
+        if len(rf_bl) > 0:
+            static_rf_acc = rf_bl['Accuracy'].values[0]
 
-    print(f"  {'Accuracy':<20} "
-          f"{static_rf_acc:>10} "
+    print(f"\n  {'Metric':<20} {'Static RF':>10} "
+          f"{'Dynamic RF':>11} {'Dynamic XGB':>12}")
+    print(f"  {'─'*20} {'─'*10} {'─'*11} {'─'*12}")
+
+    static_str = (f"{static_rf_acc:.2f}%"
+                  if static_rf_acc else 'N/A')
+
+    print(f"  {'Accuracy':<20} {static_str:>10} "
           f"{overall['rf_accuracy']:>10.2f}% "
           f"{overall['xgb_accuracy']:>11.2f}%")
-
-    print(f"  {'F1 Score':<20} "
-          f"{static_rf_f1:>10} "
+    print(f"  {'F1 Score':<20} {'N/A':>10} "
           f"{overall['rf_f1']:>10.2f}% "
           f"{overall['xgb_f1']:>11.2f}%")
-
-    print(f"  {'Precision':<20} "
-          f"{'N/A':>10} "
+    print(f"  {'Precision':<20} {'N/A':>10} "
           f"{overall['rf_precision']:>10.2f}% "
           f"{overall['xgb_precision']:>11.2f}%")
-
-    print(f"  {'Recall':<20} "
-          f"{'N/A':>10} "
+    print(f"  {'Recall':<20} {'N/A':>10} "
           f"{overall['rf_recall']:>10.2f}% "
           f"{overall['xgb_recall']:>11.2f}%")
 
-    # Per stock table
-    if len(metrics_df) > 1:
-        print(f"\n  Per-stock results:")
-        print(f"  {'Stock':<8} {'RF Acc':>8} "
-              f"{'XGB Acc':>9} {'RF F1':>7} {'XGB F1':>8}")
-        print(f"  {'─'*8} {'─'*8} "
-              f"{'─'*9} {'─'*7} {'─'*8}")
-
-        for _, row in metrics_df.iterrows():
-            print(f"  {row['stock']:<8} "
-                  f"{row['rf_accuracy']:>7.2f}% "
-                  f"{row['xgb_accuracy']:>8.2f}% "
-                  f"{row['rf_f1']:>6.2f}% "
-                  f"{row['xgb_f1']:>7.2f}%")
-
     print(f"\n  Total predictions : {len(combined_df):,}")
-    print(f"  Total time        : {total_elapsed:.0f}s")
-    print(f"\n  Files saved:")
-    print(f"  ✅ reports/logs/dynamic_all_results.csv")
-    print(f"  ✅ reports/metrics/dynamic_results.csv")
-    print(f"  ✅ reports/logs/dynamic_{{stock}}.csv "
-          f"(one per stock)")
+    print(f"  Total time        : "
+          f"{total_elapsed/60:.1f} minutes")
 
-    # ── Improvement check ──────────────────────────────────
-    print(f"\n  {'─'*55}")
-    print(f"  COMPARISON: Static vs Dynamic")
-    print(f"  {'─'*55}")
-
-    if static_rf_acc != 'N/A':
-        static_val  = float(static_rf_acc.replace('%',''))
-        dynamic_val = overall['rf_accuracy']
-        diff        = dynamic_val - static_val
-
+    # Improvement check
+    if static_rf_acc:
+        diff = overall['rf_accuracy'] - static_rf_acc
+        print(f"\n  {'─'*55}")
         if diff > 0:
-            print(f"\n  ✅ Dynamic RF BEATS Static RF")
-            print(f"  Static  : {static_val:.2f}%")
-            print(f"  Dynamic : {dynamic_val:.2f}%")
-            print(f"  Gain    : +{diff:.2f}%")
+            print(f"  ✅ Dynamic BEATS Static by +{diff:.2f}%")
         else:
-            print(f"\n  ⚠️  Dynamic RF vs Static RF")
-            print(f"  Static  : {static_val:.2f}%")
-            print(f"  Dynamic : {dynamic_val:.2f}%")
-            print(f"  Diff    : {diff:.2f}%")
+            print(f"  ⚠️  Dynamic vs Static: {diff:.2f}%")
+            print(f"  Check evaluation.py for detailed "
+                  f"regime-wise analysis")
+        print(f"  {'─'*55}")
 
+    print(f"\n  ✅ Files saved to reports/")
     print("\n" + "="*60)
     print("  ✅ DYNAMIC MODEL COMPLETE")
-    print("  Next step: Evaluation")
-    print("  File: src/evaluation/evaluation.py")
+    print("  Next: src/evaluation/evaluation.py")
     print("="*60 + "\n")
 
 

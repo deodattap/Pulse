@@ -1,2 +1,2 @@
 stock,n_predictions,rf_accuracy,rf_f1,rf_precision,rf_recall,xgb_accuracy,xgb_f1,xgb_precision,xgb_recall
-AAPL,1002,43.21,43.23,43.24,43.21,43.21,43.23,43.24,43.21
+AAPL,1002,48.9,44.71,43.53,48.9,39.92,40.89,42.41,39.92
