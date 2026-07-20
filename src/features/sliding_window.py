@@ -1,6 +1,5 @@
 # ============================================================
 # src/features/sliding_window.py
-#
 # Purpose:
 # Implement the sliding window mechanism.
 # This is the ENGINE of the streaming simulation.
