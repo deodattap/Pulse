@@ -1,0 +1,2 @@
+stock,n_predictions,static_accuracy,static_f1,static_precision,static_recall,static_coverage,dynamic_accuracy,dynamic_f1,dynamic_precision,dynamic_recall,dynamic_coverage,accuracy_improvement,f1_improvement
+POWERGRID,719,63.58,62.68,62.07,63.58,96.24,58.64,58.02,57.5,58.64,95.83,-4.94,-4.66
