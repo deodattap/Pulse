@@ -1,0 +1,720 @@
+stock,stock_symbol,predict_date,year,month,actual_target,market_regime,static_pred,static_confidence,static_signal,static_correct,dynamic_pred,dynamic_confidence,dynamic_signal,dynamic_correct,n_dynamic_features,dynamic_features,top_mi_feature
+HINDUNILVR,HINDUNILVR.NS,2022-01-03,2022,1,0,Bear,1,0.8956,BUY,0,1,0.8277,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-04,2022,1,0,Bear,1,0.6715,BUY,0,1,0.5519,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-05,2022,1,0,Sideways,1,0.6886,BUY,0,-1,0.5273,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-06,2022,1,0,Sideways,1,0.6886,BUY,0,-1,0.5498,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-07,2022,1,0,Sideways,1,0.6016,BUY,0,0,0.5997,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-10,2022,1,0,Sideways,1,0.7358,BUY,0,1,0.5705,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-11,2022,1,0,Sideways,1,0.6659,BUY,0,-1,0.5293,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-12,2022,1,0,Sideways,-1,0.5167,NO TRADE,0,0,0.576,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-13,2022,1,0,Sideways,1,0.6589,BUY,0,-1,0.5392,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-14,2022,1,0,Sideways,0,0.8345,SELL,1,0,0.784,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-17,2022,1,0,Sideways,0,0.8928,SELL,1,0,0.9177,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-18,2022,1,0,Sideways,0,0.8499,SELL,1,0,0.8409,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-19,2022,1,0,Sideways,-1,0.5312,NO TRADE,0,-1,0.5242,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-20,2022,1,1,Bear,1,0.7463,BUY,1,1,0.6585,BUY,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-21,2022,1,0,Bear,0,0.93,SELL,1,0,0.9274,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-24,2022,1,0,Sideways,0,0.7731,SELL,1,0,0.7324,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-25,2022,1,0,Bear,0,0.9755,SELL,1,0,0.9344,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-27,2022,1,0,Bear,-1,0.5142,NO TRADE,0,0,0.5859,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-28,2022,1,0,Bear,0,0.5515,SELL,1,0,0.5599,SELL,1,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-01-31,2022,1,0,Bear,1,0.6554,BUY,0,1,0.5779,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-02-01,2022,2,0,Bear,1,0.7803,BUY,0,1,0.6682,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-02-02,2022,2,0,Bear,1,0.7192,BUY,0,-1,0.5211,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-02-03,2022,2,0,Sideways,1,0.7897,BUY,0,1,0.641,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-02-04,2022,2,0,Bear,1,0.7987,BUY,0,1,0.6267,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-02-07,2022,2,0,Sideways,1,0.8314,BUY,0,1,0.7189,BUY,0,10,"BB_Lower,BB_Upper,OBV,Volume_MA,MACD_Hist,MACD,ADX,ATR_14,Rolling_Median_Return,RSI_14",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2022-02-08,2022,2,0,Bear,0,0.8068,SELL,1,0,0.801,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-09,2022,2,0,Sideways,0,0.8522,SELL,1,0,0.8413,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-10,2022,2,0,Sideways,0,0.9254,SELL,1,0,0.8743,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-11,2022,2,0,Sideways,0,0.7752,SELL,1,0,0.6127,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-14,2022,2,0,Bear,1,0.5682,BUY,0,1,0.5815,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-15,2022,2,0,Bear,0,0.8617,SELL,1,0,0.7276,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-16,2022,2,0,Sideways,0,0.6172,SELL,1,0,0.7399,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-17,2022,2,0,Sideways,0,0.7907,SELL,1,0,0.8201,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-18,2022,2,0,Sideways,0,0.685,SELL,1,0,0.664,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-21,2022,2,0,Sideways,0,0.6891,SELL,1,0,0.6628,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-22,2022,2,0,Sideways,1,0.6544,BUY,0,-1,0.5484,NO TRADE,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-23,2022,2,0,Sideways,1,0.6459,BUY,0,1,0.5685,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-24,2022,2,0,Sideways,1,0.6001,BUY,0,1,0.5639,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-25,2022,2,0,Bear,1,0.6619,BUY,0,1,0.6191,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-02-28,2022,2,0,Bear,1,0.7549,BUY,0,0,0.5649,SELL,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-02,2022,3,0,Sideways,1,0.7397,BUY,0,-1,0.526,NO TRADE,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-03,2022,3,0,Bear,1,0.7596,BUY,0,1,0.8037,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-04,2022,3,1,Bear,1,0.8066,BUY,1,1,0.8459,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-07,2022,3,1,Bear,1,0.9004,BUY,1,1,0.8998,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-08,2022,3,1,Bear,1,0.8932,BUY,1,1,0.9121,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-09,2022,3,1,Bear,1,0.9119,BUY,1,1,0.9411,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-10,2022,3,1,Bear,1,0.9339,BUY,1,1,0.9326,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-11,2022,3,1,Bear,1,0.9633,BUY,1,1,0.9702,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-14,2022,3,1,Bear,1,0.9642,BUY,1,1,0.9664,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-15,2022,3,1,Bear,1,0.9641,BUY,1,1,0.9689,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-16,2022,3,1,Bear,1,0.9457,BUY,1,1,0.9628,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-17,2022,3,1,Bear,1,0.933,BUY,1,1,0.9139,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-21,2022,3,1,Bear,1,0.9726,BUY,1,1,0.9432,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-22,2022,3,1,Bear,1,0.9698,BUY,1,1,0.9678,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-23,2022,3,1,Bear,1,0.9582,BUY,1,1,0.9589,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-24,2022,3,1,Bear,1,0.9672,BUY,1,1,0.9755,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-25,2022,3,1,Bear,1,0.9691,BUY,1,1,0.9706,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-28,2022,3,1,Bear,1,0.9636,BUY,1,1,0.9501,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-29,2022,3,1,Bear,1,0.9641,BUY,1,1,0.9564,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-30,2022,3,1,Bear,1,0.9542,BUY,1,1,0.952,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-03-31,2022,3,1,Bear,1,0.942,BUY,1,1,0.9249,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-01,2022,4,1,Bear,1,0.9676,BUY,1,1,0.9463,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-04,2022,4,1,Bear,1,0.8424,BUY,1,1,0.8382,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-05,2022,4,1,Bear,1,0.7203,BUY,1,1,0.789,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-06,2022,4,0,Bear,1,0.7286,BUY,0,1,0.7599,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-07,2022,4,1,Bear,1,0.7036,BUY,1,1,0.6125,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-08,2022,4,0,Bear,0,0.5706,SELL,1,1,0.569,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-11,2022,4,0,Bear,1,0.7124,BUY,0,1,0.7496,BUY,0,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-12,2022,4,1,Bear,1,0.6951,BUY,1,1,0.7046,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-13,2022,4,1,Bear,-1,0.5139,NO TRADE,0,1,0.6319,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-18,2022,4,1,Bear,1,0.5981,BUY,1,1,0.5893,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-19,2022,4,1,Bear,1,0.9345,BUY,1,1,0.9028,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-20,2022,4,1,Bear,1,0.8021,BUY,1,1,0.849,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-21,2022,4,1,Bear,1,0.7351,BUY,1,1,0.7167,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-22,2022,4,1,Bear,1,0.8596,BUY,1,1,0.7902,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-25,2022,4,1,Bear,1,0.9027,BUY,1,1,0.8204,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-26,2022,4,1,Bear,1,0.7528,BUY,1,1,0.622,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-27,2022,4,1,Bear,1,0.865,BUY,1,1,0.8032,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-28,2022,4,1,Bear,1,0.726,BUY,1,1,0.7167,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-04-29,2022,4,1,Sideways,1,0.9263,BUY,1,1,0.9124,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-05-02,2022,5,1,Sideways,1,0.8872,BUY,1,1,0.9178,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-05-04,2022,5,1,Sideways,1,0.7541,BUY,1,1,0.7743,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-05-05,2022,5,1,Bear,1,0.7714,BUY,1,1,0.7427,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-05-06,2022,5,1,Bear,1,0.7299,BUY,1,1,0.8437,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-05-09,2022,5,1,Bear,1,0.6627,BUY,1,1,0.656,BUY,1,10,"OBV,BB_Upper,MACD,BB_Lower,ADX,MACD_Hist,Volume_MA,Rolling_Std_10,Rolling_Median_Return,ATR_14",OBV
+HINDUNILVR,HINDUNILVR.NS,2022-05-10,2022,5,1,Bear,1,0.9327,BUY,1,1,0.9281,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-11,2022,5,1,Bear,1,0.959,BUY,1,1,0.9119,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-12,2022,5,1,Bear,1,0.9451,BUY,1,1,0.8742,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-13,2022,5,1,Sideways,1,0.9237,BUY,1,1,0.8613,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-16,2022,5,0,Sideways,1,0.9438,BUY,0,1,0.9095,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-17,2022,5,0,Sideways,1,0.9509,BUY,0,1,0.913,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-18,2022,5,0,Sideways,1,0.9641,BUY,0,1,0.9215,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-19,2022,5,0,Bull,1,0.9836,BUY,0,1,0.9269,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-20,2022,5,0,Bull,1,0.8733,BUY,0,1,0.7781,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-23,2022,5,0,Bull,1,0.6918,BUY,0,1,0.6431,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-24,2022,5,0,Bull,1,0.874,BUY,0,1,0.7944,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-25,2022,5,0,Bull,1,0.8815,BUY,0,1,0.7695,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-26,2022,5,0,Bull,1,0.8508,BUY,0,1,0.7274,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-27,2022,5,0,Bull,1,0.6923,BUY,0,0,0.5514,SELL,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-30,2022,5,0,Bull,1,0.6011,BUY,0,-1,0.5195,NO TRADE,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-05-31,2022,5,0,Bull,1,0.7497,BUY,0,1,0.6511,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-01,2022,6,0,Bull,1,0.6427,BUY,0,1,0.625,BUY,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-02,2022,6,0,Bull,1,0.6294,BUY,0,-1,0.5259,NO TRADE,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-03,2022,6,1,Bull,0,0.6881,SELL,0,-1,0.5308,NO TRADE,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-06,2022,6,1,Bull,0,0.7017,SELL,0,-1,0.5221,NO TRADE,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-07,2022,6,1,Bull,0,0.6072,SELL,0,1,0.5827,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-08,2022,6,1,Bull,0,0.657,SELL,0,0,0.7698,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-09,2022,6,1,Bull,0,0.6043,SELL,0,0,0.7891,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-10,2022,6,1,Bull,0,0.7745,SELL,0,0,0.8612,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-13,2022,6,1,Bull,0,0.5641,SELL,0,0,0.7269,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-14,2022,6,1,Bull,-1,0.5359,NO TRADE,0,0,0.6628,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-15,2022,6,1,Bull,1,0.5503,BUY,1,0,0.6165,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-16,2022,6,1,Bull,1,0.7185,BUY,1,1,0.5587,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-17,2022,6,1,Sideways,1,0.8366,BUY,1,1,0.614,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-20,2022,6,1,Sideways,1,0.8906,BUY,1,1,0.7501,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-21,2022,6,1,Bull,1,0.8794,BUY,1,1,0.689,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-22,2022,6,1,Bull,1,0.9029,BUY,1,1,0.6981,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-23,2022,6,1,Bull,1,0.9559,BUY,1,1,0.8309,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-24,2022,6,1,Bull,1,0.94,BUY,1,1,0.8025,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-27,2022,6,1,Bull,1,0.9431,BUY,1,1,0.7573,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-28,2022,6,1,Bull,1,0.9509,BUY,1,1,0.5823,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-29,2022,6,1,Bull,1,0.9379,BUY,1,1,0.7368,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-06-30,2022,6,1,Bull,1,0.8966,BUY,1,1,0.6261,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-01,2022,7,1,Bull,1,0.8291,BUY,1,1,0.5604,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-04,2022,7,1,Bull,1,0.8005,BUY,1,1,0.5991,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-05,2022,7,1,Bull,1,0.7994,BUY,1,-1,0.5029,NO TRADE,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-06,2022,7,1,Bull,1,0.7157,BUY,1,-1,0.5143,NO TRADE,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-07,2022,7,1,Bull,1,0.7958,BUY,1,1,0.5565,BUY,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-08,2022,7,1,Bull,1,0.7309,BUY,1,0,0.6694,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-11,2022,7,1,Bull,1,0.7479,BUY,1,-1,0.528,NO TRADE,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-12,2022,7,1,Bull,1,0.7023,BUY,1,0,0.6758,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-13,2022,7,1,Bull,0,0.8236,SELL,0,0,0.8624,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-14,2022,7,1,Bull,0,0.766,SELL,0,0,0.8277,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-15,2022,7,1,Bull,0,0.9309,SELL,0,0,0.891,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-18,2022,7,1,Bull,0,0.7843,SELL,0,0,0.8639,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-19,2022,7,1,Bull,0,0.8594,SELL,0,0,0.8856,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-20,2022,7,1,Bull,0,0.9296,SELL,0,0,0.9382,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-21,2022,7,1,Bull,0,0.8886,SELL,0,0,0.9246,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-22,2022,7,0,Bull,0,0.963,SELL,1,0,0.9756,SELL,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-25,2022,7,0,Bull,0,0.8998,SELL,1,0,0.9427,SELL,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-26,2022,7,1,Bull,0,0.7637,SELL,0,0,0.8945,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-27,2022,7,0,Bull,0,0.958,SELL,1,0,0.9756,SELL,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-28,2022,7,0,Bull,0,0.9693,SELL,1,0,0.9826,SELL,1,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-07-29,2022,7,1,Bull,0,0.973,SELL,0,0,0.9874,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-01,2022,8,1,Bull,0,0.9182,SELL,0,0,0.9479,SELL,0,10,"BB_Upper,OBV,BB_Lower,ADX,Volume_MA,Rolling_Std_10,Rolling_Volatility,MACD_Hist,Rolling_Median_Return,MACD",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-02,2022,8,0,Bull,0,0.7741,SELL,1,0,0.8194,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-03,2022,8,0,Bull,0,0.8301,SELL,1,0,0.8082,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-04,2022,8,0,Bull,0,0.8958,SELL,1,0,0.9301,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-05,2022,8,0,Bull,0,0.9629,SELL,1,0,0.9452,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-08,2022,8,0,Bull,0,0.9048,SELL,1,0,0.8995,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-10,2022,8,0,Bull,0,0.9739,SELL,1,0,0.9551,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-11,2022,8,0,Bull,0,0.9773,SELL,1,0,0.9552,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-12,2022,8,0,Bull,0,0.9549,SELL,1,0,0.9382,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-16,2022,8,0,Bull,0,0.9884,SELL,1,0,0.9754,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-17,2022,8,0,Bull,0,0.9886,SELL,1,0,0.973,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-18,2022,8,0,Bull,0,0.962,SELL,1,0,0.9302,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-19,2022,8,0,Bull,0,0.9625,SELL,1,0,0.9111,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-22,2022,8,0,Bull,0,0.9588,SELL,1,0,0.9424,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-23,2022,8,1,Bull,0,0.5745,SELL,0,0,0.838,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-24,2022,8,1,Bull,-1,0.5435,NO TRADE,0,0,0.8299,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-25,2022,8,1,Bull,0,0.6032,SELL,0,0,0.8278,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-26,2022,8,1,Bull,-1,0.5403,NO TRADE,0,0,0.9071,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-29,2022,8,1,Bull,0,0.6047,SELL,0,0,0.9266,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-08-30,2022,8,1,Bull,0,0.8523,SELL,0,0,0.9384,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-01,2022,9,1,Bull,0,0.5904,SELL,0,0,0.8745,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-02,2022,9,1,Bull,0,0.5873,SELL,0,0,0.8954,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-05,2022,9,1,Bull,-1,0.513,NO TRADE,0,0,0.8838,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-06,2022,9,1,Bull,-1,0.5338,NO TRADE,0,0,0.8816,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-07,2022,9,1,Bull,-1,0.5251,NO TRADE,0,0,0.8596,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-08,2022,9,1,Bull,1,0.5646,BUY,1,0,0.7836,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-09,2022,9,1,Bull,1,0.5605,BUY,1,0,0.8344,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-12,2022,9,0,Bull,-1,0.5253,NO TRADE,0,0,0.819,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-13,2022,9,1,Bull,1,0.5549,BUY,1,0,0.8051,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-14,2022,9,0,Bull,1,0.707,BUY,0,0,0.7372,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-15,2022,9,1,Bull,1,0.9358,BUY,1,1,0.632,BUY,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-16,2022,9,1,Bull,1,0.9377,BUY,1,0,0.5514,SELL,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-19,2022,9,1,Bull,1,0.8609,BUY,1,-1,0.5213,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-20,2022,9,0,Bull,1,0.8938,BUY,0,0,0.5965,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-21,2022,9,0,Bull,1,0.9084,BUY,0,0,0.5555,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-22,2022,9,0,Bull,1,0.9247,BUY,0,-1,0.5355,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-23,2022,9,0,Bull,1,0.7212,BUY,0,0,0.6877,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-26,2022,9,0,Bull,1,0.6112,BUY,0,0,0.8056,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-27,2022,9,0,Bull,-1,0.5108,NO TRADE,0,0,0.8801,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-28,2022,9,0,Bull,-1,0.5492,NO TRADE,0,0,0.8633,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-29,2022,9,0,Bull,1,0.5686,BUY,0,0,0.7929,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-09-30,2022,9,0,Bull,1,0.5868,BUY,0,0,0.815,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-03,2022,10,0,Bull,1,0.6176,BUY,0,0,0.8095,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-04,2022,10,0,Sideways,-1,0.5191,NO TRADE,0,0,0.8827,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-06,2022,10,0,Bull,1,0.6354,BUY,0,0,0.6757,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-07,2022,10,0,Sideways,1,0.7878,BUY,0,0,0.6611,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-10,2022,10,0,Sideways,1,0.8129,BUY,0,0,0.6388,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-11,2022,10,0,Bull,1,0.6607,BUY,0,0,0.6835,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-12,2022,10,0,Sideways,-1,0.5278,NO TRADE,0,0,0.8569,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-13,2022,10,0,Sideways,-1,0.5315,NO TRADE,0,0,0.9089,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-14,2022,10,0,Sideways,0,0.5767,SELL,1,0,0.8824,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-17,2022,10,0,Sideways,-1,0.5487,NO TRADE,0,0,0.869,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-18,2022,10,0,Sideways,1,0.9134,BUY,0,0,0.7551,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-19,2022,10,0,Sideways,1,0.9561,BUY,0,0,0.6034,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-20,2022,10,0,Sideways,1,0.9592,BUY,0,0,0.6328,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-21,2022,10,0,Sideways,1,0.9479,BUY,0,0,0.5521,SELL,1,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-24,2022,10,0,Sideways,1,0.9692,BUY,0,-1,0.5247,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-25,2022,10,1,Sideways,1,0.8961,BUY,1,-1,0.5007,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-27,2022,10,1,Bear,1,0.9337,BUY,1,-1,0.5379,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-28,2022,10,1,Bear,1,0.9445,BUY,1,-1,0.5085,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-10-31,2022,10,1,Bear,1,0.9421,BUY,1,-1,0.5387,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Volatility,Rolling_Std_10,BB_Lower,ADX,BB_Width,Rolling_Median_Return,Volume_MA,ATR_14",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-01,2022,11,1,Bear,1,0.9329,BUY,1,1,0.8343,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-02,2022,11,1,Bear,1,0.8732,BUY,1,1,0.82,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-03,2022,11,1,Bear,1,0.917,BUY,1,1,0.6207,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-04,2022,11,1,Sideways,1,0.9188,BUY,1,1,0.7737,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-07,2022,11,1,Sideways,1,0.9187,BUY,1,1,0.7078,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-09,2022,11,1,Sideways,1,0.9131,BUY,1,1,0.8625,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-10,2022,11,1,Sideways,1,0.8995,BUY,1,1,0.7907,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-11,2022,11,1,Sideways,1,0.9125,BUY,1,1,0.824,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-14,2022,11,1,Sideways,1,0.881,BUY,1,1,0.8273,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-15,2022,11,1,Bear,-1,0.5015,NO TRADE,0,0,0.5911,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-16,2022,11,1,Bear,0,0.7926,SELL,0,0,0.8486,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-17,2022,11,1,Bear,0,0.8255,SELL,0,0,0.8053,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-18,2022,11,1,Bear,0,0.8157,SELL,0,0,0.8631,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-21,2022,11,1,Sideways,0,0.9219,SELL,0,0,0.8678,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-22,2022,11,1,Sideways,-1,0.5456,NO TRADE,0,1,0.5592,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-23,2022,11,1,Sideways,-1,0.5289,NO TRADE,0,-1,0.5241,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-24,2022,11,1,Sideways,1,0.733,BUY,1,1,0.6038,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-25,2022,11,1,Sideways,1,0.9109,BUY,1,1,0.7838,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-28,2022,11,1,Sideways,1,0.9301,BUY,1,1,0.8532,BUY,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-29,2022,11,0,Sideways,1,0.8052,BUY,0,1,0.7399,BUY,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-11-30,2022,11,0,Bull,0,0.6196,SELL,1,0,0.6732,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-01,2022,12,0,Bull,0,0.6379,SELL,1,0,0.6506,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-02,2022,12,0,Bull,0,0.8053,SELL,1,0,0.8643,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-05,2022,12,0,Sideways,0,0.8519,SELL,1,0,0.8856,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-06,2022,12,0,Sideways,0,0.9057,SELL,1,0,0.8928,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-07,2022,12,0,Sideways,0,0.9358,SELL,1,0,0.933,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-08,2022,12,0,Sideways,0,0.7823,SELL,1,0,0.9032,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-09,2022,12,0,Bull,0,0.8255,SELL,1,0,0.8706,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-12,2022,12,0,Bull,0,0.9141,SELL,1,0,0.9004,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-13,2022,12,0,Sideways,0,0.9712,SELL,1,0,0.97,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-14,2022,12,0,Sideways,0,0.9776,SELL,1,0,0.9889,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-15,2022,12,0,Sideways,0,0.9776,SELL,1,0,0.9903,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-16,2022,12,0,Bull,0,0.98,SELL,1,0,0.988,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-19,2022,12,0,Sideways,0,0.9943,SELL,1,0,0.9924,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-20,2022,12,0,Bull,0,0.9831,SELL,1,0,0.9786,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-21,2022,12,1,Bull,0,0.9863,SELL,0,0,0.9858,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-22,2022,12,1,Bull,0,0.9684,SELL,0,0,0.9561,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-23,2022,12,0,Bull,0,0.9396,SELL,1,0,0.954,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-26,2022,12,0,Sideways,0,0.8559,SELL,1,0,0.8976,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-27,2022,12,1,Bull,0,0.7656,SELL,0,0,0.8548,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-28,2022,12,1,Sideways,-1,0.5346,NO TRADE,0,0,0.7335,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-29,2022,12,1,Sideways,0,0.7504,SELL,0,0,0.8472,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2022-12-30,2022,12,1,Sideways,0,0.7841,SELL,0,0,0.8758,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-02,2023,1,1,Sideways,0,0.7626,SELL,0,0,0.8547,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-03,2023,1,1,Sideways,0,0.7228,SELL,0,0,0.7409,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-04,2023,1,1,Bear,0,0.7421,SELL,0,0,0.7046,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-05,2023,1,1,Sideways,0,0.6848,SELL,0,0,0.7306,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-06,2023,1,1,Bull,0,0.6311,SELL,0,0,0.6962,SELL,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-09,2023,1,0,Bull,0,0.6486,SELL,1,0,0.7826,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-10,2023,1,0,Bull,-1,0.5457,NO TRADE,0,0,0.7099,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-11,2023,1,0,Bull,0,0.5698,SELL,1,0,0.6188,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-12,2023,1,0,Sideways,-1,0.5401,NO TRADE,0,0,0.615,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-13,2023,1,0,Bull,1,0.6017,BUY,0,0,0.6074,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-16,2023,1,0,Bull,1,0.6284,BUY,0,-1,0.5094,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-17,2023,1,0,Bull,1,0.5937,BUY,0,-1,0.5309,NO TRADE,0,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-18,2023,1,0,Bull,-1,0.5415,NO TRADE,0,0,0.5871,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-19,2023,1,0,Bull,1,0.5708,BUY,0,0,0.5789,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-20,2023,1,0,Bull,0,0.6393,SELL,1,0,0.7851,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-23,2023,1,0,Sideways,0,0.7133,SELL,1,0,0.8209,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-24,2023,1,0,Bull,-1,0.5451,NO TRADE,0,0,0.664,SELL,1,10,"BB_Upper,OBV,Rolling_Std_10,Rolling_Volatility,BB_Width,Volume_MA,BB_Lower,Stochastic,RSI_14,Rolling_Median_Return",BB_Upper
+HINDUNILVR,HINDUNILVR.NS,2023-01-25,2023,1,0,Bull,0,0.958,SELL,1,0,0.9607,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-01-27,2023,1,0,Bull,0,0.9114,SELL,1,0,0.9265,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-01-30,2023,1,0,Bull,0,0.8988,SELL,1,0,0.8766,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-01-31,2023,1,0,Bull,0,0.9192,SELL,1,0,0.9313,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-01,2023,2,0,Bull,0,0.8758,SELL,1,0,0.8542,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-02,2023,2,0,Bull,0,0.9271,SELL,1,0,0.9463,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-03,2023,2,0,Bull,0,0.928,SELL,1,0,0.9587,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-06,2023,2,0,Bull,0,0.9322,SELL,1,0,0.9567,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-07,2023,2,0,Bull,0,0.9195,SELL,1,0,0.9382,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-08,2023,2,0,Bull,0,0.9292,SELL,1,0,0.9406,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-09,2023,2,0,Sideways,0,0.9258,SELL,1,0,0.894,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-10,2023,2,0,Bear,0,0.9054,SELL,1,0,0.9095,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-13,2023,2,0,Bear,0,0.9377,SELL,1,0,0.9108,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-14,2023,2,0,Sideways,0,0.9336,SELL,1,0,0.8988,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-15,2023,2,0,Sideways,0,0.8784,SELL,1,0,0.8896,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-16,2023,2,0,Bear,0,0.8433,SELL,1,0,0.7823,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-17,2023,2,0,Bear,-1,0.5064,NO TRADE,0,0,0.5596,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-20,2023,2,0,Bear,1,0.6069,BUY,0,-1,0.5494,NO TRADE,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-21,2023,2,0,Bear,-1,0.5219,NO TRADE,0,-1,0.5081,NO TRADE,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-22,2023,2,0,Bear,-1,0.5202,NO TRADE,0,0,0.5636,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-23,2023,2,0,Bear,0,0.5781,SELL,1,0,0.6004,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-24,2023,2,1,Bear,-1,0.5116,NO TRADE,0,0,0.5888,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-27,2023,2,1,Bear,1,0.6863,BUY,1,1,0.5508,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-02-28,2023,2,1,Bear,1,0.8105,BUY,1,1,0.7772,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-01,2023,3,1,Bear,1,0.8961,BUY,1,1,0.8546,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-02,2023,3,1,Bear,1,0.898,BUY,1,1,0.8506,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-03,2023,3,1,Bear,1,0.9127,BUY,1,1,0.8972,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-06,2023,3,1,Bear,1,0.9187,BUY,1,1,0.902,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-08,2023,3,1,Bear,1,0.8343,BUY,1,1,0.8136,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-09,2023,3,1,Bear,1,0.9006,BUY,1,1,0.8116,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-10,2023,3,1,Bear,1,0.9264,BUY,1,1,0.8789,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-13,2023,3,1,Bear,1,0.8689,BUY,1,1,0.8314,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-14,2023,3,1,Bear,1,0.8139,BUY,1,1,0.7972,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-15,2023,3,1,Bear,1,0.8377,BUY,1,1,0.7674,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-16,2023,3,1,Bear,1,0.8275,BUY,1,1,0.6695,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-17,2023,3,1,Bear,1,0.7297,BUY,1,1,0.5857,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-20,2023,3,0,Bear,1,0.6097,BUY,0,-1,0.5111,NO TRADE,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-21,2023,3,1,Sideways,-1,0.53,NO TRADE,0,0,0.5778,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-22,2023,3,1,Bear,1,0.5579,BUY,1,-1,0.5049,NO TRADE,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-23,2023,3,1,Bear,-1,0.5417,NO TRADE,0,0,0.5545,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-24,2023,3,0,Bear,-1,0.5113,NO TRADE,0,0,0.5562,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-27,2023,3,0,Bear,1,0.5882,BUY,0,-1,0.5474,NO TRADE,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-28,2023,3,0,Bear,1,0.7205,BUY,0,1,0.5597,BUY,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-29,2023,3,0,Bear,0,0.6001,SELL,1,0,0.6358,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-03-31,2023,3,0,Sideways,0,0.5648,SELL,1,0,0.5871,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-03,2023,4,0,Bear,1,0.5518,BUY,0,-1,0.5042,NO TRADE,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-05,2023,4,0,Bear,0,0.6448,SELL,1,0,0.6633,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-06,2023,4,0,Sideways,0,0.7008,SELL,1,0,0.7435,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-10,2023,4,0,Sideways,-1,0.5069,NO TRADE,0,0,0.7039,SELL,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-11,2023,4,1,Sideways,-1,0.5301,NO TRADE,0,0,0.7173,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-12,2023,4,1,Sideways,-1,0.5088,NO TRADE,0,0,0.6009,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-13,2023,4,1,Bear,1,0.5589,BUY,1,0,0.5604,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-17,2023,4,1,Bear,-1,0.5352,NO TRADE,0,0,0.7017,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-18,2023,4,1,Sideways,1,0.6104,BUY,1,0,0.5844,SELL,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-19,2023,4,1,Sideways,1,0.8651,BUY,1,-1,0.5057,NO TRADE,0,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-20,2023,4,1,Sideways,1,0.914,BUY,1,1,0.6723,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-21,2023,4,1,Bear,1,0.9494,BUY,1,1,0.8903,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-24,2023,4,1,Bear,1,0.9232,BUY,1,1,0.8945,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-25,2023,4,1,Bear,1,0.8857,BUY,1,1,0.8002,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-26,2023,4,1,Bear,1,0.9732,BUY,1,1,0.9372,BUY,1,10,"Volume_MA,BB_Upper,BB_Lower,OBV,MFI,Rolling_Volatility,Stochastic,BB_Width,Rolling_Std_10,ROC",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-27,2023,4,1,Bear,1,0.9389,BUY,1,1,0.8952,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-04-28,2023,4,1,Bear,1,0.8316,BUY,1,1,0.7546,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-02,2023,5,1,Bear,1,0.7929,BUY,1,1,0.684,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-03,2023,5,1,Bear,1,0.8109,BUY,1,1,0.79,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-04,2023,5,1,Bear,1,0.8584,BUY,1,1,0.7836,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-05,2023,5,1,Sideways,1,0.9101,BUY,1,1,0.8581,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-08,2023,5,1,Sideways,1,0.9198,BUY,1,1,0.8357,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-09,2023,5,1,Sideways,1,0.8226,BUY,1,1,0.7141,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-10,2023,5,1,Sideways,1,0.7703,BUY,1,1,0.7329,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-11,2023,5,1,Sideways,1,0.6155,BUY,1,0,0.581,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-12,2023,5,1,Bull,0,0.7102,SELL,0,0,0.6496,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-15,2023,5,0,Bull,0,0.6117,SELL,1,0,0.6501,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-16,2023,5,0,Bull,0,0.6592,SELL,1,0,0.6065,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-17,2023,5,1,Bull,0,0.753,SELL,0,0,0.6934,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-18,2023,5,1,Bull,0,0.7238,SELL,0,0,0.8239,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-19,2023,5,1,Bull,0,0.7963,SELL,0,0,0.7466,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-22,2023,5,1,Bull,0,0.7662,SELL,0,0,0.7796,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-23,2023,5,1,Bull,0,0.7703,SELL,0,0,0.7954,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-24,2023,5,1,Bull,0,0.7438,SELL,0,0,0.8239,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-25,2023,5,1,Bull,1,0.6579,BUY,1,-1,0.5101,NO TRADE,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-26,2023,5,1,Bull,0,0.7536,SELL,0,0,0.8602,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-29,2023,5,1,Bull,-1,0.5327,NO TRADE,0,0,0.6853,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-30,2023,5,1,Bull,-1,0.5073,NO TRADE,0,0,0.6803,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-05-31,2023,5,1,Bull,0,0.7152,SELL,0,0,0.8922,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-01,2023,6,1,Bull,0,0.8441,SELL,0,0,0.9237,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-02,2023,6,1,Bull,0,0.8088,SELL,0,0,0.8827,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-05,2023,6,1,Bull,0,0.7986,SELL,0,0,0.8892,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-06,2023,6,1,Bull,0,0.7454,SELL,0,0,0.8547,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-07,2023,6,1,Bull,0,0.875,SELL,0,0,0.9057,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-08,2023,6,1,Bull,0,0.5915,SELL,0,0,0.6884,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-09,2023,6,1,Bull,1,0.6484,BUY,1,-1,0.5137,NO TRADE,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-12,2023,6,1,Bull,1,0.8012,BUY,1,1,0.59,BUY,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-13,2023,6,1,Bull,0,0.6953,SELL,0,0,0.8056,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-14,2023,6,0,Bull,0,0.8216,SELL,1,0,0.8358,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-15,2023,6,1,Bull,-1,0.5468,NO TRADE,0,0,0.6279,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-16,2023,6,0,Bull,0,0.8703,SELL,1,0,0.8938,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-19,2023,6,0,Bull,0,0.9532,SELL,1,0,0.9196,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-20,2023,6,0,Bull,0,0.9602,SELL,1,0,0.9264,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-21,2023,6,1,Bull,0,0.8951,SELL,0,0,0.9124,SELL,0,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-22,2023,6,0,Bull,0,0.8682,SELL,1,0,0.9164,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-23,2023,6,0,Bull,0,0.9229,SELL,1,0,0.8507,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-26,2023,6,0,Bull,0,0.8974,SELL,1,0,0.8817,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-27,2023,6,0,Bull,0,0.8418,SELL,1,0,0.8419,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-28,2023,6,0,Bull,0,0.9111,SELL,1,0,0.8382,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-06-30,2023,6,0,Bull,0,0.9497,SELL,1,0,0.8801,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-03,2023,7,0,Bull,0,0.947,SELL,1,0,0.8624,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-04,2023,7,0,Bull,0,0.9414,SELL,1,0,0.8498,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-05,2023,7,0,Bull,0,0.9332,SELL,1,0,0.8811,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-06,2023,7,0,Bull,0,0.9184,SELL,1,0,0.8747,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-07,2023,7,0,Bull,0,0.9626,SELL,1,0,0.9311,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-10,2023,7,0,Bull,0,0.9533,SELL,1,0,0.9187,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-11,2023,7,0,Bull,0,0.9446,SELL,1,0,0.9407,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-12,2023,7,0,Bull,0,0.9197,SELL,1,0,0.9202,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-13,2023,7,0,Bull,0,0.8903,SELL,1,0,0.8758,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-14,2023,7,0,Bull,0,0.8939,SELL,1,0,0.9203,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-17,2023,7,0,Bull,0,0.8153,SELL,1,0,0.8722,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-18,2023,7,0,Bull,0,0.8513,SELL,1,0,0.8718,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-19,2023,7,0,Bull,0,0.7992,SELL,1,0,0.8347,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-20,2023,7,0,Bull,0,0.9143,SELL,1,0,0.9121,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-21,2023,7,0,Bull,0,0.953,SELL,1,0,0.953,SELL,1,10,"Volume_MA,BB_Lower,BB_Upper,Rolling_Std_10,MFI,RSI_14,Rolling_Mean_Return,ROC,Return_10d,MACD",Volume_MA
+HINDUNILVR,HINDUNILVR.NS,2023-07-24,2023,7,0,Sideways,0,0.9688,SELL,1,0,0.9697,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-07-25,2023,7,1,Sideways,0,0.9698,SELL,0,0,0.9786,SELL,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-07-26,2023,7,0,Bear,0,0.9726,SELL,1,0,0.9781,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-07-27,2023,7,0,Sideways,0,0.975,SELL,1,0,0.9739,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-07-28,2023,7,0,Sideways,0,0.981,SELL,1,0,0.9815,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-07-31,2023,7,0,Sideways,0,0.9636,SELL,1,0,0.9496,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-01,2023,8,0,Sideways,0,0.9635,SELL,1,0,0.9226,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-02,2023,8,0,Sideways,0,0.9739,SELL,1,0,0.927,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-03,2023,8,0,Sideways,0,0.9511,SELL,1,0,0.8864,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-04,2023,8,0,Sideways,0,0.9292,SELL,1,0,0.7271,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-07,2023,8,0,Sideways,0,0.9572,SELL,1,0,0.7854,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-08,2023,8,0,Sideways,0,0.9468,SELL,1,0,0.7728,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-09,2023,8,0,Sideways,0,0.8976,SELL,1,0,0.5549,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-10,2023,8,0,Bear,0,0.8695,SELL,1,0,0.5624,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-11,2023,8,1,Bear,0,0.8689,SELL,0,0,0.6149,SELL,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-14,2023,8,0,Bear,0,0.8625,SELL,1,0,0.7486,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-16,2023,8,0,Bear,0,0.9379,SELL,1,0,0.8321,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-17,2023,8,0,Bear,0,0.8493,SELL,1,0,0.666,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-18,2023,8,0,Bear,0,0.9395,SELL,1,0,0.8785,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-21,2023,8,0,Bear,0,0.9108,SELL,1,0,0.7585,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-22,2023,8,0,Bear,0,0.8997,SELL,1,0,0.6741,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-23,2023,8,0,Sideways,0,0.932,SELL,1,0,0.763,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-24,2023,8,0,Sideways,0,0.9492,SELL,1,0,0.7219,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-25,2023,8,0,Bear,0,0.9343,SELL,1,0,0.7218,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-28,2023,8,0,Bear,0,0.9332,SELL,1,0,0.7212,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-29,2023,8,0,Bear,0,0.8736,SELL,1,0,0.6301,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-30,2023,8,0,Bear,0,0.8692,SELL,1,0,0.6715,SELL,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-08-31,2023,8,0,Bear,0,0.8523,SELL,1,-1,0.5438,NO TRADE,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-01,2023,9,0,Bear,0,0.7785,SELL,1,-1,0.5179,NO TRADE,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-04,2023,9,1,Bear,0,0.7611,SELL,0,1,0.633,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-05,2023,9,1,Bear,0,0.7615,SELL,0,1,0.6378,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-06,2023,9,0,Bear,0,0.7548,SELL,1,1,0.6378,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-07,2023,9,1,Bear,0,0.8505,SELL,0,1,0.5574,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-08,2023,9,1,Bear,0,0.8422,SELL,0,1,0.592,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-11,2023,9,1,Bear,0,0.8522,SELL,0,-1,0.5272,NO TRADE,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-12,2023,9,1,Bear,0,0.802,SELL,0,1,0.6258,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-13,2023,9,1,Bear,0,0.742,SELL,0,1,0.6243,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-14,2023,9,1,Bear,0,0.8142,SELL,0,-1,0.5295,NO TRADE,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-15,2023,9,1,Bear,1,0.8699,BUY,1,1,0.9085,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-18,2023,9,1,Bear,1,0.8765,BUY,1,1,0.8912,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-20,2023,9,1,Bear,1,0.9336,BUY,1,1,0.9186,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-21,2023,9,1,Bear,1,0.9296,BUY,1,1,0.9175,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-22,2023,9,1,Bear,1,0.8139,BUY,1,1,0.8816,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-25,2023,9,1,Bear,1,0.8607,BUY,1,1,0.8695,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-26,2023,9,0,Bear,1,0.8111,BUY,0,1,0.8771,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-27,2023,9,0,Bear,1,0.6489,BUY,0,1,0.7336,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-28,2023,9,1,Bear,1,0.8027,BUY,1,1,0.798,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-09-29,2023,9,1,Bear,1,0.7918,BUY,1,1,0.8654,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-03,2023,10,1,Bear,1,0.7948,BUY,1,1,0.8198,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-04,2023,10,0,Bear,1,0.6223,BUY,0,-1,0.5441,NO TRADE,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-05,2023,10,1,Bear,1,0.5555,BUY,1,1,0.5824,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-06,2023,10,1,Sideways,1,0.5962,BUY,1,1,0.6027,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-09,2023,10,1,Bear,1,0.6405,BUY,1,1,0.6416,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-10,2023,10,1,Bear,1,0.6839,BUY,1,1,0.63,BUY,1,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-11,2023,10,0,Sideways,-1,0.533,NO TRADE,0,1,0.5519,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-12,2023,10,0,Sideways,1,0.708,BUY,0,1,0.7313,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-13,2023,10,0,Sideways,1,0.623,BUY,0,1,0.6829,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-16,2023,10,0,Sideways,1,0.8302,BUY,0,1,0.7903,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-17,2023,10,0,Sideways,1,0.8442,BUY,0,1,0.8507,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-18,2023,10,0,Sideways,1,0.8526,BUY,0,1,0.8277,BUY,0,10,"MACD,BB_Lower,OBV,BB_Upper,Rolling_Median_Return,Rolling_Std_10,MACD_Hist,Volume_MA,MFI,ADX",MACD
+HINDUNILVR,HINDUNILVR.NS,2023-10-19,2023,10,0,Sideways,1,0.6178,BUY,0,0,0.5809,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-10-20,2023,10,1,Sideways,1,0.9051,BUY,1,1,0.8336,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-10-23,2023,10,1,Bear,1,0.9221,BUY,1,1,0.9223,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-10-25,2023,10,1,Bear,1,0.9468,BUY,1,1,0.9124,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-10-26,2023,10,1,Sideways,1,0.9069,BUY,1,1,0.8492,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-10-27,2023,10,1,Sideways,1,0.8735,BUY,1,1,0.817,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-10-30,2023,10,1,Sideways,1,0.7332,BUY,1,1,0.8125,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-10-31,2023,10,1,Bear,1,0.7536,BUY,1,1,0.7775,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-01,2023,11,1,Sideways,1,0.8481,BUY,1,1,0.8542,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-02,2023,11,1,Bear,1,0.8724,BUY,1,1,0.7873,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-03,2023,11,1,Sideways,1,0.8506,BUY,1,1,0.7984,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-06,2023,11,1,Sideways,1,0.7484,BUY,1,1,0.7716,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-07,2023,11,1,Sideways,1,0.8069,BUY,1,1,0.8838,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-08,2023,11,1,Sideways,1,0.653,BUY,1,1,0.6107,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-09,2023,11,1,Sideways,1,0.9361,BUY,1,1,0.9187,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-10,2023,11,1,Sideways,1,0.9411,BUY,1,1,0.9424,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-13,2023,11,1,Sideways,1,0.9546,BUY,1,1,0.9555,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-15,2023,11,1,Sideways,1,0.9415,BUY,1,1,0.9144,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-16,2023,11,1,Sideways,1,0.9332,BUY,1,1,0.8547,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-17,2023,11,1,Sideways,1,0.6619,BUY,1,-1,0.5256,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-20,2023,11,1,Sideways,1,0.8608,BUY,1,1,0.8204,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-21,2023,11,1,Sideways,1,0.8525,BUY,1,1,0.7896,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-22,2023,11,1,Sideways,1,0.7925,BUY,1,1,0.7235,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-23,2023,11,1,Sideways,1,0.8031,BUY,1,1,0.7947,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-24,2023,11,1,Sideways,1,0.7609,BUY,1,1,0.6878,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-28,2023,11,1,Sideways,1,0.7571,BUY,1,1,0.6026,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-29,2023,11,1,Sideways,1,0.6314,BUY,1,-1,0.5488,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-11-30,2023,11,1,Sideways,-1,0.5194,NO TRADE,0,0,0.6216,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-01,2023,12,1,Bull,1,0.5514,BUY,1,0,0.5895,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-04,2023,12,1,Bull,0,0.6349,SELL,0,0,0.694,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-05,2023,12,1,Bull,1,0.6533,BUY,1,1,0.6086,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-06,2023,12,1,Bull,1,0.7842,BUY,1,1,0.5728,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-07,2023,12,1,Bull,1,0.892,BUY,1,1,0.8001,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-08,2023,12,1,Sideways,1,0.8811,BUY,1,1,0.6429,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-11,2023,12,1,Bull,1,0.8787,BUY,1,1,0.8054,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-12,2023,12,1,Sideways,1,0.8826,BUY,1,1,0.7675,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-13,2023,12,1,Sideways,1,0.8837,BUY,1,1,0.7249,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-14,2023,12,1,Bull,1,0.8818,BUY,1,1,0.5681,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-15,2023,12,1,Bull,1,0.8636,BUY,1,-1,0.5355,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-18,2023,12,1,Bull,1,0.7409,BUY,1,0,0.6079,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-19,2023,12,1,Sideways,1,0.5618,BUY,1,0,0.8591,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-20,2023,12,0,Bull,1,0.6531,BUY,0,0,0.6739,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-21,2023,12,1,Bull,-1,0.5162,NO TRADE,0,0,0.8127,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-22,2023,12,0,Bull,0,0.6456,SELL,1,0,0.888,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-26,2023,12,0,Bull,-1,0.5085,NO TRADE,0,0,0.8296,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-27,2023,12,0,Sideways,0,0.5955,SELL,1,0,0.8454,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-28,2023,12,0,Bull,0,0.8587,SELL,1,0,0.8985,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2023-12-29,2023,12,0,Bull,0,0.8055,SELL,1,0,0.8381,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-01,2024,1,0,Bull,-1,0.5373,NO TRADE,0,0,0.7705,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-02,2024,1,0,Bull,1,0.6752,BUY,0,-1,0.5291,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-03,2024,1,0,Bull,1,0.8735,BUY,0,-1,0.5012,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-04,2024,1,0,Bull,1,0.803,BUY,0,-1,0.5121,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-05,2024,1,0,Bull,1,0.7285,BUY,0,0,0.5953,SELL,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-08,2024,1,0,Bull,1,0.7992,BUY,0,-1,0.5146,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-09,2024,1,0,Bull,1,0.8848,BUY,0,1,0.5759,BUY,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-10,2024,1,0,Bull,1,0.9123,BUY,0,1,0.7165,BUY,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-11,2024,1,0,Bull,1,0.9259,BUY,0,1,0.7585,BUY,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-12,2024,1,0,Bull,1,0.876,BUY,0,1,0.6648,BUY,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-15,2024,1,0,Bull,1,0.9016,BUY,0,1,0.6056,BUY,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-16,2024,1,0,Bull,1,0.8918,BUY,0,1,0.7604,BUY,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Std_10,Rolling_Median_Return,OBV,Rolling_Volatility,BB_Width,ADX,MACD_Hist",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-17,2024,1,0,Bull,0,0.7516,SELL,1,0,0.7981,SELL,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-18,2024,1,0,Sideways,-1,0.5315,NO TRADE,0,0,0.723,SELL,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-19,2024,1,0,Sideways,0,0.7849,SELL,1,0,0.7835,SELL,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-23,2024,1,1,Bull,1,0.5536,BUY,1,-1,0.5433,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-24,2024,1,0,Bear,0,0.6491,SELL,1,0,0.6403,SELL,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-25,2024,1,0,Sideways,-1,0.5429,NO TRADE,0,-1,0.5011,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-29,2024,1,0,Sideways,1,0.6972,BUY,0,1,0.6122,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-30,2024,1,0,Sideways,1,0.7284,BUY,0,1,0.6153,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-01-31,2024,1,0,Sideways,-1,0.5163,NO TRADE,0,-1,0.5295,NO TRADE,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-01,2024,2,0,Sideways,1,0.7232,BUY,0,1,0.7202,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-02,2024,2,0,Sideways,1,0.7676,BUY,0,1,0.7621,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-05,2024,2,1,Sideways,1,0.8846,BUY,1,1,0.8542,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-06,2024,2,0,Bear,1,0.8922,BUY,0,1,0.8914,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-07,2024,2,0,Bear,1,0.8398,BUY,0,1,0.8577,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-08,2024,2,1,Bear,1,0.9194,BUY,1,1,0.9291,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-09,2024,2,0,Bear,1,0.8495,BUY,0,1,0.8616,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-12,2024,2,0,Bear,1,0.9048,BUY,0,1,0.8965,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-13,2024,2,0,Bear,1,0.8904,BUY,0,1,0.8657,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-14,2024,2,0,Bear,1,0.8864,BUY,0,1,0.7902,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-15,2024,2,0,Bear,1,0.9347,BUY,0,1,0.7919,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-16,2024,2,0,Bear,1,0.894,BUY,0,1,0.6604,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-19,2024,2,0,Bear,1,0.9309,BUY,0,1,0.6814,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-20,2024,2,0,Bear,1,0.9119,BUY,0,1,0.7681,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-21,2024,2,0,Bear,1,0.9581,BUY,0,1,0.8475,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-22,2024,2,0,Bear,1,0.956,BUY,0,1,0.8625,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-23,2024,2,0,Bear,1,0.9416,BUY,0,1,0.8133,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-26,2024,2,0,Bear,1,0.9009,BUY,0,1,0.7637,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-27,2024,2,0,Bear,1,0.9021,BUY,0,1,0.7211,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-28,2024,2,0,Bear,1,0.7916,BUY,0,1,0.6534,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-02-29,2024,2,0,Bear,1,0.7989,BUY,0,1,0.7215,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-01,2024,3,0,Bear,1,0.7284,BUY,0,1,0.6293,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-04,2024,3,0,Bear,1,0.6857,BUY,0,0,0.5746,SELL,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-05,2024,3,0,Bear,1,0.7502,BUY,0,1,0.5957,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-06,2024,3,0,Bear,1,0.8063,BUY,0,1,0.6312,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-07,2024,3,0,Bear,1,0.6212,BUY,0,0,0.561,SELL,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-11,2024,3,0,Bear,1,0.7914,BUY,0,1,0.7113,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-12,2024,3,0,Bear,1,0.8252,BUY,0,1,0.6996,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-13,2024,3,0,Bear,1,0.8988,BUY,0,1,0.7428,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-14,2024,3,0,Bear,1,0.884,BUY,0,1,0.6585,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-15,2024,3,0,Bear,1,0.9336,BUY,0,1,0.7597,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-18,2024,3,0,Bear,1,0.9371,BUY,0,1,0.7915,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-19,2024,3,0,Bear,1,0.9217,BUY,0,1,0.7629,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-20,2024,3,1,Bear,1,0.8535,BUY,1,1,0.6494,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-21,2024,3,1,Bear,1,0.8844,BUY,1,1,0.6511,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-22,2024,3,0,Bear,1,0.8909,BUY,0,1,0.691,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-26,2024,3,0,Bear,1,0.8793,BUY,0,1,0.62,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-27,2024,3,0,Bear,1,0.9274,BUY,0,1,0.6896,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-03-28,2024,3,0,Bear,1,0.9146,BUY,0,1,0.5922,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-01,2024,4,0,Bear,1,0.9425,BUY,0,1,0.5659,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-02,2024,4,0,Bear,1,0.9577,BUY,0,1,0.763,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-03,2024,4,0,Bear,1,0.9711,BUY,0,1,0.7819,BUY,0,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-04,2024,4,1,Bear,1,0.9609,BUY,1,1,0.8226,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-05,2024,4,1,Bear,1,0.9553,BUY,1,1,0.8024,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-08,2024,4,1,Bear,1,0.9494,BUY,1,1,0.7967,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-09,2024,4,1,Bear,1,0.9642,BUY,1,1,0.8702,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-10,2024,4,1,Bear,1,0.9587,BUY,1,1,0.9339,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-12,2024,4,1,Bear,1,0.9715,BUY,1,1,0.9407,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-15,2024,4,1,Bear,1,0.9731,BUY,1,1,0.9212,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-16,2024,4,1,Bear,1,0.948,BUY,1,1,0.7405,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-18,2024,4,1,Bear,1,0.9585,BUY,1,1,0.8689,BUY,1,10,"BB_Lower,BB_Upper,OBV,MACD,Rolling_Median_Return,Rolling_Volatility,MACD_Hist,ATR_14,BB_Width,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-19,2024,4,1,Bear,1,0.7098,BUY,1,1,0.8278,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-22,2024,4,1,Bear,1,0.6384,BUY,1,1,0.6761,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-23,2024,4,1,Bear,-1,0.5129,NO TRADE,0,1,0.6408,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-24,2024,4,1,Bear,1,0.5639,BUY,1,1,0.6758,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-25,2024,4,1,Bear,1,0.5722,BUY,1,1,0.6805,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-26,2024,4,1,Bear,1,0.7455,BUY,1,1,0.7165,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-29,2024,4,1,Bear,1,0.731,BUY,1,1,0.6807,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-04-30,2024,4,1,Bear,1,0.6339,BUY,1,-1,0.5335,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-02,2024,5,1,Bear,1,0.659,BUY,1,-1,0.5236,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-03,2024,5,1,Bear,1,0.6941,BUY,1,1,0.6057,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-06,2024,5,1,Bear,0,0.6605,SELL,0,0,0.7527,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-07,2024,5,1,Bear,0,0.7271,SELL,0,0,0.6572,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-08,2024,5,1,Sideways,0,0.6562,SELL,0,0,0.5822,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-09,2024,5,1,Sideways,0,0.6934,SELL,0,0,0.6676,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-10,2024,5,1,Bear,0,0.7602,SELL,0,0,0.7834,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-13,2024,5,1,Sideways,-1,0.5454,NO TRADE,0,0,0.6544,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-14,2024,5,1,Sideways,1,0.6473,BUY,1,0,0.6322,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-15,2024,5,1,Sideways,-1,0.544,NO TRADE,0,0,0.6724,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-16,2024,5,1,Bear,0,0.7567,SELL,0,0,0.8236,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-17,2024,5,1,Bear,0,0.6614,SELL,0,0,0.7715,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-21,2024,5,1,Bear,0,0.6385,SELL,0,0,0.7182,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-22,2024,5,1,Bear,0,0.7539,SELL,0,0,0.7659,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-23,2024,5,1,Sideways,0,0.7985,SELL,0,0,0.8532,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-24,2024,5,1,Sideways,0,0.7577,SELL,0,0,0.7802,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-27,2024,5,1,Sideways,0,0.802,SELL,0,0,0.8283,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-28,2024,5,1,Sideways,0,0.8281,SELL,0,0,0.8742,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-29,2024,5,1,Sideways,0,0.8255,SELL,0,0,0.87,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-30,2024,5,1,Sideways,0,0.7304,SELL,0,0,0.8032,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-05-31,2024,5,1,Sideways,0,0.5848,SELL,0,0,0.7663,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-03,2024,6,1,Sideways,0,0.7052,SELL,0,0,0.825,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-04,2024,6,1,Sideways,0,0.6548,SELL,0,0,0.8074,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-05,2024,6,0,Bull,0,0.5593,SELL,1,-1,0.5401,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-06,2024,6,1,Bull,1,0.6839,BUY,1,1,0.639,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-07,2024,6,1,Bull,1,0.8351,BUY,1,1,0.7651,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-10,2024,6,1,Bull,1,0.9164,BUY,1,1,0.7069,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-11,2024,6,1,Bull,1,0.8898,BUY,1,-1,0.5116,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-12,2024,6,1,Bull,1,0.9127,BUY,1,1,0.6236,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-13,2024,6,1,Bull,1,0.893,BUY,1,1,0.619,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-14,2024,6,1,Bull,1,0.849,BUY,1,1,0.6551,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-18,2024,6,1,Bull,1,0.7212,BUY,1,1,0.5621,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-19,2024,6,1,Bull,1,0.6961,BUY,1,-1,0.5234,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-20,2024,6,1,Bull,1,0.6189,BUY,1,0,0.6882,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-21,2024,6,1,Bull,1,0.7595,BUY,1,-1,0.5179,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-24,2024,6,1,Bull,1,0.7867,BUY,1,1,0.6102,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-25,2024,6,1,Bull,1,0.7962,BUY,1,1,0.5832,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-26,2024,6,1,Bull,1,0.6828,BUY,1,-1,0.5438,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-27,2024,6,1,Bull,1,0.7734,BUY,1,1,0.5965,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-06-28,2024,6,1,Bull,0,0.5877,SELL,0,-1,0.5217,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-01,2024,7,1,Bull,1,0.5531,BUY,1,-1,0.5104,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-02,2024,7,1,Bull,1,0.7376,BUY,1,1,0.6487,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-03,2024,7,1,Bull,-1,0.5287,NO TRADE,0,-1,0.5101,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-04,2024,7,1,Bull,1,0.8344,BUY,1,1,0.7844,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-05,2024,7,1,Bull,1,0.601,BUY,1,-1,0.505,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-08,2024,7,1,Bull,1,0.7208,BUY,1,-1,0.5452,NO TRADE,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-09,2024,7,1,Bull,1,0.7242,BUY,1,1,0.5574,BUY,1,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-10,2024,7,1,Bull,0,0.6408,SELL,0,0,0.8328,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-11,2024,7,1,Bull,1,0.6925,BUY,1,0,0.7074,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-12,2024,7,1,Bull,-1,0.5469,NO TRADE,0,0,0.8479,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-15,2024,7,1,Bull,0,0.6398,SELL,0,0,0.8138,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-16,2024,7,1,Bull,0,0.7504,SELL,0,0,0.8577,SELL,0,10,"BB_Lower,BB_Upper,MACD,Rolling_Median_Return,MACD_Hist,Rolling_Volatility,ATR_14,ADX,OBV,Rolling_Std_10",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-18,2024,7,1,Bull,1,0.736,BUY,1,1,0.6156,BUY,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-19,2024,7,1,Bull,1,0.7748,BUY,1,1,0.6385,BUY,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-22,2024,7,1,Bull,1,0.7287,BUY,1,1,0.5529,BUY,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-23,2024,7,1,Bull,-1,0.5438,NO TRADE,0,0,0.6527,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-24,2024,7,1,Bull,1,0.7388,BUY,1,-1,0.5495,NO TRADE,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-25,2024,7,1,Bull,1,0.6978,BUY,1,0,0.6066,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-26,2024,7,1,Bull,1,0.5677,BUY,1,0,0.6677,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-29,2024,7,1,Bull,-1,0.5326,NO TRADE,0,0,0.6897,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-30,2024,7,1,Bull,1,0.5681,BUY,1,0,0.6623,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-07-31,2024,7,1,Bull,0,0.6571,SELL,0,0,0.783,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-01,2024,8,1,Bull,0,0.8272,SELL,0,0,0.898,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-02,2024,8,1,Bull,0,0.8603,SELL,0,0,0.8985,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-05,2024,8,1,Bull,0,0.8887,SELL,0,0,0.8972,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-06,2024,8,1,Bull,0,0.8912,SELL,0,0,0.8993,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-07,2024,8,1,Bull,0,0.8987,SELL,0,0,0.8912,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-08,2024,8,1,Bull,0,0.9037,SELL,0,0,0.9132,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-09,2024,8,1,Bull,0,0.8998,SELL,0,0,0.9118,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-12,2024,8,1,Bull,0,0.9114,SELL,0,0,0.9075,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-13,2024,8,1,Bull,0,0.9136,SELL,0,0,0.946,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-14,2024,8,1,Bull,0,0.9234,SELL,0,0,0.9089,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-16,2024,8,1,Bull,0,0.9616,SELL,0,0,0.9607,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-19,2024,8,1,Bull,0,0.9236,SELL,0,0,0.9502,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-20,2024,8,1,Bull,0,0.9478,SELL,0,0,0.9515,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-21,2024,8,1,Bull,0,0.958,SELL,0,0,0.9558,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-22,2024,8,1,Bull,0,0.9332,SELL,0,0,0.9394,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-23,2024,8,1,Bull,0,0.9413,SELL,0,0,0.9421,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-26,2024,8,1,Bull,0,0.8972,SELL,0,0,0.9525,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-27,2024,8,1,Bull,0,0.8946,SELL,0,0,0.9369,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-28,2024,8,1,Bull,0,0.9151,SELL,0,0,0.9187,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-29,2024,8,1,Bull,0,0.8903,SELL,0,0,0.9249,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-08-30,2024,8,1,Bull,0,0.8589,SELL,0,0,0.9094,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-02,2024,9,1,Bull,0,0.9207,SELL,0,0,0.9413,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-03,2024,9,1,Bull,0,0.9206,SELL,0,0,0.9155,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-04,2024,9,1,Bull,0,0.9375,SELL,0,0,0.9083,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-05,2024,9,1,Bull,0,0.9299,SELL,0,0,0.8795,SELL,0,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-06,2024,9,0,Bull,0,0.9314,SELL,1,0,0.9199,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-09,2024,9,0,Bull,0,0.959,SELL,1,0,0.9691,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-10,2024,9,0,Bull,0,0.9278,SELL,1,0,0.9431,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-11,2024,9,0,Bull,0,0.9526,SELL,1,0,0.9598,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-12,2024,9,0,Bull,0,0.9806,SELL,1,0,0.981,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-13,2024,9,0,Bull,0,0.9629,SELL,1,0,0.9743,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-16,2024,9,0,Bull,0,0.9456,SELL,1,0,0.9711,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-17,2024,9,0,Bull,0,0.9507,SELL,1,0,0.9808,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-18,2024,9,0,Bull,0,0.9591,SELL,1,0,0.9902,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-19,2024,9,0,Bull,0,0.9802,SELL,1,0,0.9916,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-20,2024,9,0,Bull,0,0.978,SELL,1,0,0.9871,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-23,2024,9,0,Bull,0,0.9812,SELL,1,0,0.9824,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-24,2024,9,0,Bull,0,0.9426,SELL,1,0,0.9781,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-25,2024,9,0,Bull,0,0.9661,SELL,1,0,0.9909,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-26,2024,9,0,Bull,0,0.9824,SELL,1,0,0.9941,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-27,2024,9,0,Bull,0,0.9649,SELL,1,0,0.9924,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-09-30,2024,9,0,Bull,0,0.9761,SELL,1,0,0.992,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-01,2024,10,0,Bull,0,0.9706,SELL,1,0,0.9906,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-03,2024,10,0,Bull,0,0.9639,SELL,1,0,0.9849,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-04,2024,10,0,Bull,0,0.9224,SELL,1,0,0.9021,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-07,2024,10,0,Bull,0,0.9431,SELL,1,0,0.9286,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-08,2024,10,0,Bull,0,0.9231,SELL,1,0,0.9295,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-09,2024,10,0,Bull,0,0.8425,SELL,1,0,0.8762,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-10,2024,10,0,Sideways,0,0.9378,SELL,1,0,0.9356,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-11,2024,10,0,Bull,0,0.9516,SELL,1,0,0.9237,SELL,1,10,"BB_Lower,BB_Upper,Rolling_Median_Return,OBV,ATR_14,MACD,BB_Width,Volume_MA,Rolling_Std_10,Rolling_Volatility",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-14,2024,10,0,Bull,0,0.9712,SELL,1,0,0.9504,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-15,2024,10,0,Bull,0,0.9744,SELL,1,0,0.9576,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-16,2024,10,0,Bull,0,0.9767,SELL,1,0,0.9572,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-17,2024,10,0,Bull,0,0.9396,SELL,1,0,0.925,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-18,2024,10,0,Sideways,0,0.9472,SELL,1,0,0.8879,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-21,2024,10,0,Sideways,0,0.917,SELL,1,0,0.7694,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-22,2024,10,0,Sideways,0,0.8668,SELL,1,0,0.7385,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-23,2024,10,0,Sideways,0,0.7956,SELL,1,0,0.6253,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-24,2024,10,0,Bear,0,0.9172,SELL,1,0,0.9112,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-25,2024,10,0,Bear,0,0.9511,SELL,1,0,0.9321,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-28,2024,10,0,Bear,0,0.9253,SELL,1,0,0.9123,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-29,2024,10,0,Bear,0,0.912,SELL,1,0,0.9099,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-30,2024,10,0,Bear,0,0.9385,SELL,1,0,0.9392,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-10-31,2024,10,0,Bear,0,0.9207,SELL,1,0,0.9389,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-01,2024,11,0,Bear,0,0.8093,SELL,1,0,0.9288,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-04,2024,11,0,Bear,0,0.7391,SELL,1,0,0.9098,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-05,2024,11,1,Bear,0,0.7681,SELL,0,0,0.8893,SELL,0,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-06,2024,11,0,Bear,0,0.7013,SELL,1,0,0.8826,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-07,2024,11,0,Bear,0,0.6534,SELL,1,0,0.8548,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-08,2024,11,0,Bear,0,0.7986,SELL,1,0,0.8876,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-11,2024,11,0,Bear,0,0.6413,SELL,1,0,0.8903,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-12,2024,11,0,Bear,-1,0.52,NO TRADE,0,0,0.8379,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-13,2024,11,0,Bear,0,0.5747,SELL,1,0,0.8499,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-14,2024,11,0,Bear,1,0.6009,BUY,0,0,0.7323,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-18,2024,11,0,Bear,0,0.6925,SELL,1,0,0.883,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-19,2024,11,0,Bear,0,0.6644,SELL,1,0,0.9021,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-21,2024,11,0,Bear,0,0.6381,SELL,1,0,0.9159,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-22,2024,11,0,Bear,0,0.6913,SELL,1,0,0.8916,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-25,2024,11,0,Bear,0,0.8354,SELL,1,0,0.8952,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-26,2024,11,0,Bear,0,0.7832,SELL,1,0,0.8881,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-27,2024,11,0,Bear,0,0.8409,SELL,1,0,0.8563,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-28,2024,11,0,Bear,0,0.9579,SELL,1,0,0.8724,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-11-29,2024,11,0,Bear,0,0.9823,SELL,1,0,0.9425,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower
+HINDUNILVR,HINDUNILVR.NS,2024-12-02,2024,12,0,Bear,0,0.9682,SELL,1,0,0.9187,SELL,1,10,"BB_Lower,BB_Upper,OBV,Rolling_Std_10,Rolling_Median_Return,Volume_MA,Rolling_Volatility,MACD,MFI,BB_Width",BB_Lower

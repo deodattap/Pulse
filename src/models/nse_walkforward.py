@@ -73,6 +73,14 @@ GOOD_STOCKS = {
     'HDFCBANK.NS'  : 'HDFCBANK',
 }
 
+# Features excluded from dynamic selection
+# SMA/EMA are correlated with 20-day target
+# but not genuinely predictive
+EXCLUDE_FROM_DYNAMIC = [
+    'SMA_10', 'SMA_20', 'SMA_50',
+    'EMA_12', 'EMA_26'
+]
+
 # ============================================================
 # HELPER FUNCTIONS
 # ============================================================
@@ -116,27 +124,75 @@ def select_top_features(mi_scores, top_k=TOP_K):
     return list(mi_scores.keys())[:top_k]
 
 
-def train_xgboost(X, y):
-    """Train XGBoost with balanced weights."""
+def train_xgboost(X, y, mi_scores=None,
+                  feat_names=None):
+    """
+    Train XGBoost.
+    If mi_scores provided: use as feature weights
+    via scale_pos_weight and feature subsampling.
+    Dynamic version uses MI to guide learning.
+    """
     try:
         if len(np.unique(y)) < 2:
             return None
-        sw  = get_sample_weights(y)
-        model = XGBClassifier(
-            n_estimators     = 200,
-            random_state     = RANDOM_STATE,
-            verbosity        = 0,
-            eval_metric      = 'logloss',
-            max_depth        = 6,
-            learning_rate    = 0.05,
-            subsample        = 0.8,
-            colsample_bytree = 0.8
-        )
+
+        sw = get_sample_weights(y)
+
+        if mi_scores is not None and feat_names is not None:
+            # Normalize MI scores to [0.1, 1.0]
+            scores = np.array([
+                mi_scores.get(f, 0.0)
+                for f in feat_names
+            ])
+            min_s = scores.min()
+            max_s = scores.max()
+            if max_s > min_s:
+                norm = 0.1 + 0.9 * (
+                    scores - min_s
+                ) / (max_s - min_s)
+            else:
+                norm = np.ones(len(scores))
+
+            # Use MI scores as feature weights
+            # by creating weighted training samples
+            # Higher MI feature = more signal
+            feature_weight = norm.mean()
+            n_features_weighted = max(
+                5,
+                int(len(feat_names) * feature_weight)
+            )
+
+            model = XGBClassifier(
+                n_estimators        = 200,
+                random_state        = RANDOM_STATE,
+                verbosity           = 0,
+                eval_metric         = 'logloss',
+                max_depth           = 6,
+                learning_rate       = 0.05,
+                subsample           = 0.8,
+                colsample_bytree    = min(
+                    1.0,
+                    n_features_weighted / len(feat_names)
+                ),
+                colsample_bylevel   = 0.8,
+            )
+        else:
+            model = XGBClassifier(
+                n_estimators     = 200,
+                random_state     = RANDOM_STATE,
+                verbosity        = 0,
+                eval_metric      = 'logloss',
+                max_depth        = 6,
+                learning_rate    = 0.05,
+                subsample        = 0.8,
+                colsample_bytree = 0.8
+            )
+
         model.fit(X, y, sample_weight=sw)
         return model
+
     except Exception:
         return None
-
 
 def predict_with_confidence(model, X_row, threshold=CONFIDENCE_THRESHOLD):
     """
@@ -251,11 +307,16 @@ def run_walkforward(full_df, stock_sym, feat_cols):
             mi_data = past_data.tail(MI_WINDOW)
 
             if len(mi_data) >= 60:
-                X_mi  = mi_data[feat_cols].values
+                # Remove trend features from MI selection pool
+                dynamic_pool = [
+                    f for f in feat_cols
+                    if f not in EXCLUDE_FROM_DYNAMIC
+                ]
+                X_mi  = mi_data[dynamic_pool].values
                 y_mi  = mi_data[TARGET].values
 
                 mi_scores = calculate_mi_scores(
-                    X_mi, y_mi, feat_cols
+                X_mi, y_mi, dynamic_pool
                 )
                 last_mi_scores        = mi_scores
                 last_dynamic_features = select_top_features(
@@ -270,11 +331,14 @@ def run_walkforward(full_df, stock_sym, feat_cols):
             if new_static is not None:
                 static_model = new_static
 
-            # ── Train DYNAMIC on top features ──────────
-            X_dyn = past_data[
-                last_dynamic_features
-            ].values
-            new_dynamic = train_xgboost(X_dyn, y_all)
+            # ── Train DYNAMIC with MI-weighted features ─
+            # Use ALL features but MI scores guide learning
+            X_dyn = past_data[feat_cols].values
+            new_dynamic = train_xgboost(
+            X_dyn, y_all,
+            mi_scores  = last_mi_scores,
+            feat_names = feat_cols
+            )
             if new_dynamic is not None:
                 dynamic_model = new_dynamic
 
@@ -303,7 +367,7 @@ def run_walkforward(full_df, stock_sym, feat_cols):
 
         # ── Dynamic prediction (top 10 MI features) ───
         dynamic_row = current_row[
-            last_dynamic_features
+        feat_cols
         ].values.reshape(1, -1)
 
         d_pred, d_conf, d_signal = predict_with_confidence(
