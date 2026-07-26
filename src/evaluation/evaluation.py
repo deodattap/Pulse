@@ -460,15 +460,213 @@ def financial_metrics(df):
     df['predict_date'] = pd.to_datetime(
         df['predict_date']
     )
-    df = df.sort_values('predict_date')
-
-    # Simulate daily return
-    # We use Binary_Target as proxy for actual return
-    # 1 = Up day, 0 = Down day
-    # Return = +1% for Up, -1% for Down (simplified)
-    df['daily_return'] = df['actual_target'].apply(
-        lambda x: 0.01 if x == 1 else -0.01
+    df = df.sort_values(
+        ['stock', 'predict_date']
     )
+
+    def simulate_one_stock(stock_df, pred_col):
+        """
+        Simulate portfolio for one stock.
+        Start: 10000
+        BUY  signal → gain if actual=Up
+        SELL signal → gain if actual=Down
+        NO TRADE    → no change
+        Use realistic +/-0.5% per trade return.
+        """
+        portfolio = 10000.0
+        values    = [portfolio]
+        wins      = 0
+        trades    = 0
+
+        for _, row in stock_df.iterrows():
+            pred   = row[pred_col]
+            actual = row['actual_target']
+
+            if pred == 1:    # BUY
+                ret = 0.005 if actual == 1 else -0.005
+                portfolio *= (1 + ret)
+                trades    += 1
+                if actual == 1:
+                    wins += 1
+            elif pred == 0:  # SELL
+                ret = 0.005 if actual == 0 else -0.005
+                portfolio *= (1 + ret)
+                trades    += 1
+                if actual == 0:
+                    wins += 1
+
+            values.append(portfolio)
+
+        win_rate = wins/trades*100 if trades > 0 else 0
+        return values, win_rate, trades
+
+    def sharpe(values):
+        rets = np.diff(values) / np.array(values[:-1])
+        if rets.std() == 0:
+            return 0.0
+        return (rets.mean() / rets.std()) * np.sqrt(252)
+
+    def mdd(values):
+        v    = np.array(values)
+        peak = np.maximum.accumulate(v)
+        dd   = (v - peak) / peak
+        return dd.min() * 100
+
+    def roi(values):
+        return (values[-1] - values[0]) / values[0] * 100
+
+    # Per stock simulation then average
+    stocks         = df['stock'].unique()
+    s_rois, d_rois = [], []
+    s_srs,  d_srs  = [], []
+    s_mdds, d_mdds = [], []
+    s_wrs,  d_wrs  = [], []
+    s_trds, d_trds = [], []
+
+    print(f"\n  {'Stock':<12} "
+          f"{'S-ROI':>8} {'D-ROI':>8} "
+          f"{'S-SR':>7} {'D-SR':>7}")
+    print(f"  {'─'*12} "
+          f"{'─'*8} {'─'*8} "
+          f"{'─'*7} {'─'*7}")
+
+    for stock in stocks:
+        sdf = df[df['stock'] == stock]
+
+        sv, s_wr, s_tr = simulate_one_stock(
+            sdf, 'static_pred'
+        )
+        dv, d_wr, d_tr = simulate_one_stock(
+            sdf, 'dynamic_pred'
+        )
+
+        s_rois.append(roi(sv))
+        d_rois.append(roi(dv))
+        s_srs.append(sharpe(sv))
+        d_srs.append(sharpe(dv))
+        s_mdds.append(mdd(sv))
+        d_mdds.append(mdd(dv))
+        s_wrs.append(s_wr)
+        d_wrs.append(d_wr)
+        s_trds.append(s_tr)
+        d_trds.append(d_tr)
+
+        print(f"  {stock:<12} "
+              f"{roi(sv):>7.1f}% "
+              f"{roi(dv):>7.1f}% "
+              f"{sharpe(sv):>6.3f} "
+              f"{sharpe(dv):>6.3f}")
+
+    # Averages
+    print(f"  {'─'*12} "
+          f"{'─'*8} {'─'*8} "
+          f"{'─'*7} {'─'*7}")
+    print(f"  {'AVERAGE':<12} "
+          f"{np.mean(s_rois):>7.1f}% "
+          f"{np.mean(d_rois):>7.1f}% "
+          f"{np.mean(s_srs):>6.3f} "
+          f"{np.mean(d_srs):>6.3f}")
+
+    # Final summary table
+    metrics = {
+        'Metric'      : [
+            'Avg ROI (%)',
+            'Avg Sharpe Ratio',
+            'Avg Max Drawdown (%)',
+            'Avg Win Rate (%)',
+            'Avg Trades per Stock'
+        ],
+        'Static XGB'  : [
+            f"{np.mean(s_rois):.2f}%",
+            f"{np.mean(s_srs):.3f}",
+            f"{np.mean(s_mdds):.2f}%",
+            f"{np.mean(s_wrs):.2f}%",
+            f"{int(np.mean(s_trds))}"
+        ],
+        'Dynamic XGB' : [
+            f"{np.mean(d_rois):.2f}%",
+            f"{np.mean(d_srs):.3f}",
+            f"{np.mean(d_mdds):.2f}%",
+            f"{np.mean(d_wrs):.2f}%",
+            f"{int(np.mean(d_trds))}"
+        ]
+    }
+
+    print(f"\n  {'Metric':<24} "
+          f"{'Static XGB':>12} "
+          f"{'Dynamic XGB':>13}")
+    print(f"  {'─'*24} {'─'*12} {'─'*13}")
+
+    mdf = pd.DataFrame(metrics)
+    for _, row in mdf.iterrows():
+        print(f"  {row['Metric']:<24} "
+              f"{row['Static XGB']:>12} "
+              f"{row['Dynamic XGB']:>13}")
+
+    # Save
+    mdf.to_csv(
+        os.path.join(METRICS_DIR,
+                     'financial_metrics.csv'),
+        index=False
+    )
+    print(f"\n  ✅ Saved: financial_metrics.csv")
+
+    # Portfolio graph — use one representative stock
+    rep_stock = df[
+        df['stock'] == stocks[0]
+    ].sort_values('predict_date')
+
+    sv, _, _ = simulate_one_stock(
+        rep_stock, 'static_pred'
+    )
+    dv, _, _ = simulate_one_stock(
+        rep_stock, 'dynamic_pred'
+    )
+    bh = [10000.0]
+    for _, row in rep_stock.iterrows():
+        ret = 0.005 if row['actual_target'] == 1 \
+              else -0.005
+        bh.append(bh[-1] * (1 + ret))
+
+    dates = (
+        [rep_stock['predict_date'].iloc[0]] +
+        rep_stock['predict_date'].tolist()
+    )
+
+    fig, ax = plt.subplots(figsize=(12, 6))
+    ax.plot(dates, sv, label='Static XGB',
+            color=COLORS['static'],
+            linewidth=1.5)
+    ax.plot(dates, dv, label='Dynamic XGB',
+            color=COLORS['dynamic'],
+            linewidth=1.5)
+    ax.plot(dates, bh, label='Buy and Hold',
+            color=COLORS['neutral'],
+            linewidth=1.5, linestyle='--')
+
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Portfolio Value (₹)')
+    ax.set_title(
+        f'Portfolio Growth — {stocks[0]}\n'
+        f'Starting Capital: ₹10,000'
+    )
+    ax.legend()
+    ax.grid(alpha=0.3)
+    ax.yaxis.set_major_formatter(
+        plt.FuncFormatter(
+            lambda x, p: f'₹{x:,.0f}'
+        )
+    )
+    plt.tight_layout()
+    plt.savefig(
+        os.path.join(GRAPHS_DIR,
+                     'portfolio_growth.png'),
+        bbox_inches='tight'
+    )
+    plt.close()
+    print(f"  ✅ Graph 6 saved: portfolio_growth.png")
+
+    return mdf
 
     def simulate_portfolio(
         predictions, daily_returns,
