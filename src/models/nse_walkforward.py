@@ -47,10 +47,10 @@ from config import *
 MIN_TRAIN_ROWS = 504   # ~2 years
 
 # Rolling window for MI calculation
-MI_WINDOW = 252        # ~1 year
+MI_WINDOW = 252        
 
 # Retrain every N days
-RETRAIN_EVERY = 60     # ~3 months
+RETRAIN_EVERY = 60
 
 # Top features to select dynamically
 TOP_K = 10
@@ -99,26 +99,41 @@ def get_sample_weights(y):
 
 def calculate_mi_scores(X, y, feature_names):
     """
-    Calculate Mutual Information scores.
-    Returns sorted dict {feature: score}.
-    Higher score = more relevant to target NOW.
+    Use XGBoost feature importance instead of MI.
+    More stable and reliable for our data size.
     """
     try:
-        scores = mutual_info_classif(
-            X, y,
-            random_state = RANDOM_STATE,
-            n_neighbors  = 5
+        if len(np.unique(y)) < 2:
+            return {f: 1.0 for f in feature_names}
+
+        sw = get_sample_weights(y)
+        model = XGBClassifier(
+        n_estimators     = 300,
+        random_state     = RANDOM_STATE,
+        verbosity        = 0,
+        eval_metric      = 'logloss',
+        max_depth        = 5,
+        learning_rate    = 0.03,
+        subsample        = 0.8,
+        colsample_bytree = 0.75,
+        min_child_weight = 5,
+        reg_alpha        = 0.05,
+        reg_lambda       = 1.0,
+        gamma            = 0.05
         )
-        score_dict = dict(zip(feature_names, scores))
+        model.fit(X, y, sample_weight=sw)
+
+        importances = model.feature_importances_
+        score_dict  = dict(zip(feature_names, importances))
+
         return dict(sorted(
             score_dict.items(),
-            key     = lambda x: x[1],
-            reverse = True
+            key=lambda x: x[1],
+            reverse=True
         ))
     except Exception:
         return {f: 1.0 for f in feature_names}
-
-
+    
 def select_top_features(mi_scores, top_k=TOP_K):
     """Return top K feature names by MI score."""
     return list(mi_scores.keys())[:top_k]
@@ -126,74 +141,29 @@ def select_top_features(mi_scores, top_k=TOP_K):
 
 def train_xgboost(X, y, mi_scores=None,
                   feat_names=None):
-    """
-    Train XGBoost.
-    If mi_scores provided: use as feature weights
-    via scale_pos_weight and feature subsampling.
-    Dynamic version uses MI to guide learning.
-    """
     try:
         if len(np.unique(y)) < 2:
             return None
-
         sw = get_sample_weights(y)
-
-        if mi_scores is not None and feat_names is not None:
-            # Normalize MI scores to [0.1, 1.0]
-            scores = np.array([
-                mi_scores.get(f, 0.0)
-                for f in feat_names
-            ])
-            min_s = scores.min()
-            max_s = scores.max()
-            if max_s > min_s:
-                norm = 0.1 + 0.9 * (
-                    scores - min_s
-                ) / (max_s - min_s)
-            else:
-                norm = np.ones(len(scores))
-
-            # Use MI scores as feature weights
-            # by creating weighted training samples
-            # Higher MI feature = more signal
-            feature_weight = norm.mean()
-            n_features_weighted = max(
-                5,
-                int(len(feat_names) * feature_weight)
-            )
-
-            model = XGBClassifier(
-                n_estimators        = 200,
-                random_state        = RANDOM_STATE,
-                verbosity           = 0,
-                eval_metric         = 'logloss',
-                max_depth           = 6,
-                learning_rate       = 0.05,
-                subsample           = 0.8,
-                colsample_bytree    = min(
-                    1.0,
-                    n_features_weighted / len(feat_names)
-                ),
-                colsample_bylevel   = 0.8,
-            )
-        else:
-            model = XGBClassifier(
-                n_estimators     = 200,
-                random_state     = RANDOM_STATE,
-                verbosity        = 0,
-                eval_metric      = 'logloss',
-                max_depth        = 6,
-                learning_rate    = 0.05,
-                subsample        = 0.8,
-                colsample_bytree = 0.8
-            )
-
+        model = XGBClassifier(
+            n_estimators     = 300,
+            random_state     = RANDOM_STATE,
+            verbosity        = 0,
+            eval_metric      = 'logloss',
+            max_depth        = 4,
+            learning_rate    = 0.03,
+            subsample        = 0.7,
+            colsample_bytree = 0.7,
+            min_child_weight = 10,
+            reg_alpha        = 0.1,
+            reg_lambda       = 1.0,
+            gamma            = 0.1
+        )
         model.fit(X, y, sample_weight=sw)
         return model
-
     except Exception:
         return None
-
+    
 def predict_with_confidence(model, X_row, threshold=CONFIDENCE_THRESHOLD):
     """
     Predict with confidence threshold.
@@ -333,12 +303,13 @@ def run_walkforward(full_df, stock_sym, feat_cols):
 
             # ── Train DYNAMIC with MI-weighted features ─
             # Use ALL features but MI scores guide learning
-            X_dyn = past_data[feat_cols].values
-            new_dynamic = train_xgboost(
+            # Dynamic uses TOP K features selected by XGB importance
+            X_dyn = past_data[last_dynamic_features].values
+            new_dynamic = train_xgboost(X_dyn, y_all)
             X_dyn, y_all,
             mi_scores  = last_mi_scores,
             feat_names = feat_cols
-            )
+            
             if new_dynamic is not None:
                 dynamic_model = new_dynamic
 
@@ -367,7 +338,7 @@ def run_walkforward(full_df, stock_sym, feat_cols):
 
         # ── Dynamic prediction (top 10 MI features) ───
         dynamic_row = current_row[
-        feat_cols
+        last_dynamic_features
         ].values.reshape(1, -1)
 
         d_pred, d_conf, d_signal = predict_with_confidence(
