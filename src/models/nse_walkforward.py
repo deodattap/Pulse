@@ -44,7 +44,7 @@ from config import *
 # ============================================================
 
 # Minimum training rows before first prediction
-MIN_TRAIN_ROWS = 504   # ~2 years
+MIN_TRAIN_ROWS = 504
 
 # Rolling window for MI calculation
 MI_WINDOW = 252        

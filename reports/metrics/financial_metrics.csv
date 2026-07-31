@@ -1,6 +1,6 @@
 Metric,Static XGB,Dynamic XGB
-Avg ROI (%),100.91%,89.87%
-Avg Sharpe Ratio,3.169,2.880
-Avg Max Drawdown (%),-22.50%,-26.55%
-Avg Win Rate (%),60.03%,59.17%
-Avg Trades per Stock,673,666
+Avg ROI (%),54.90%,66.79%
+Avg Sharpe Ratio,1.895,2.291
+Avg Max Drawdown (%),-29.99%,-30.22%
+Avg Win Rate (%),56.15%,57.42%
+Avg Trades per Stock,649,653
