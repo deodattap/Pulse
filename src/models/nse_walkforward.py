@@ -38,6 +38,216 @@ sys.path.append(
 )
 from config import *
 
+# ============================================================
+# OSSFS-DD: Online Scalable Streaming Feature Selection
+# via Dynamic Decision (Zhou et al. 2022 ACM TKDD)
+#
+# Extended to financial streaming data with XGBoost.
+# Three-way decision: Select / Delay / Discard
+# Thresholds update dynamically using running statistics.
+# ============================================================
+
+class OSSFS_DD:
+    """
+    Implements three-way dynamic feature selection
+    based on OSSFS-DD (Zhou et al. 2022).
+
+    For each window:
+      1. Calculate MI scores for all features
+      2. Update running mean and std of MI scores
+      3. Compute dynamic thresholds alpha and beta
+      4. Classify each feature:
+           score >= beta  → SELECT
+           score >= alpha → DELAY
+           score <  alpha → DISCARD
+      5. Promote delayed features if too few selected
+    """
+
+    def __init__(self,
+                 feature_names,
+                 k1=1, k2=2,
+                 min_selected=5,
+                 max_selected=15):
+
+        self.feature_names  = feature_names
+        self.k1             = k1   # lower threshold param
+        self.k2             = k2   # upper threshold param
+        self.min_selected   = min_selected
+        self.max_selected   = max_selected
+
+        # Running history of MI scores
+        # Used to compute dynamic thresholds
+        self.mi_history     = []
+
+        # Delayed features from previous window
+        # These are uncertain — need more evidence
+        self.delayed_set    = set()
+
+        # Current thresholds
+        self.alpha          = None
+        self.beta           = None
+
+        # Selection history for analysis
+        self.selection_log  = []
+
+    def update_thresholds(self, current_scores):
+        """
+        Update dynamic thresholds using
+        running statistics of MI scores.
+        Formula from paper:
+          alpha = mu - k1 * sigma
+          beta  = mu + k2 * sigma
+        """
+        # Add current scores to history
+        self.mi_history.extend(current_scores)
+
+        # Need enough history for stable statistics
+        if len(self.mi_history) < 20:
+            return False
+
+        mu    = np.mean(self.mi_history)
+        sigma = np.std(self.mi_history)
+
+        if sigma < 1e-10:
+            return False
+
+        self.alpha = mu - self.k1 * sigma
+        self.beta  = mu + self.k2 * sigma
+
+        return True
+
+    def select(self, window_data, window_num):
+        """
+        Three-way decision feature selection.
+
+        Returns:
+          selected_features: list of features to use
+          decision_info: dict with details
+        """
+        X = window_data[self.feature_names].values
+        y = window_data[TARGET].values.astype(int)
+
+        # Calculate MI scores
+        try:
+            if len(np.unique(y)) < 2:
+                return self.feature_names[:10], {}
+
+            # Use XGBoost importance for stability
+            sw = get_sample_weights(y)
+            m  = XGBClassifier(
+                n_estimators = 100,
+                random_state = RANDOM_STATE,
+                verbosity    = 0,
+                eval_metric  = 'logloss',
+                max_depth    = 4,
+                learning_rate= 0.05,
+                subsample    = 0.8
+            )
+            m.fit(X, y, sample_weight=sw)
+            scores = m.feature_importances_
+
+        except Exception:
+            return self.feature_names[:10], {}
+
+        score_dict = dict(zip(self.feature_names, scores))
+
+        # Update thresholds
+        thresholds_ready = self.update_thresholds(
+            list(scores)
+        )
+
+        # If not enough history → use top-K fallback
+        if not thresholds_ready:
+            top_k = sorted(
+                score_dict.items(),
+                key=lambda x: x[1],
+                reverse=True
+            )[:10]
+            selected = [f for f, s in top_k]
+            return selected, {
+                'method'   : 'top-k fallback',
+                'alpha'    : None,
+                'beta'     : None,
+                'selected' : selected,
+                'delayed'  : [],
+                'discarded': []
+            }
+
+        # Three-way decision
+        selected_set  = set()
+        delayed_set   = set()
+        discarded_set = set()
+
+        for feat in self.feature_names:
+            score = score_dict.get(feat, 0)
+            if score >= self.beta:
+                selected_set.add(feat)
+            elif score >= self.alpha:
+                delayed_set.add(feat)
+            else:
+                discarded_set.add(feat)
+
+        # Include previously delayed features
+        # that now exceed alpha threshold
+        for feat in self.delayed_set:
+            if feat in discarded_set:
+                score = score_dict.get(feat, 0)
+                if score >= self.alpha:
+                    delayed_set.add(feat)
+                    discarded_set.discard(feat)
+
+        # Ensure minimum selected features
+        if len(selected_set) < self.min_selected:
+            needed = self.min_selected - len(selected_set)
+            delayed_sorted = sorted(
+                delayed_set,
+                key=lambda f: score_dict.get(f, 0),
+                reverse=True
+            )
+            for feat in delayed_sorted[:needed]:
+                selected_set.add(feat)
+                delayed_set.discard(feat)
+
+        # Cap maximum features
+        if len(selected_set) > self.max_selected:
+            selected_sorted = sorted(
+                selected_set,
+                key=lambda f: score_dict.get(f, 0),
+                reverse=True
+            )
+            selected_set  = set(
+                selected_sorted[:self.max_selected]
+            )
+            delayed_set.update(
+                selected_sorted[self.max_selected:]
+            )
+
+        # Update delayed set for next window
+        self.delayed_set = delayed_set
+
+        selected = sorted(
+            selected_set,
+            key=lambda f: score_dict.get(f, 0),
+            reverse=True
+        )
+
+        decision_info = {
+            'method'    : 'ossfs-dd',
+            'window_num': window_num,
+            'alpha'     : round(self.alpha, 4),
+            'beta'      : round(self.beta,  4),
+            'selected'  : selected,
+            'delayed'   : list(delayed_set),
+            'discarded' : list(discarded_set),
+            'n_selected': len(selected),
+            'n_delayed' : len(delayed_set),
+            'n_discarded':len(discarded_set),
+            'top_feature': selected[0] if selected else ''
+        }
+
+        self.selection_log.append(decision_info)
+        return selected, decision_info
+
 
 # ============================================================
 # SETTINGS
@@ -243,9 +453,15 @@ def run_walkforward(full_df, stock_sym, feat_cols):
     static_model     = None
     dynamic_model    = None
 
-    # Feature tracking
-    last_mi_scores   = None
-    last_dynamic_features = feat_cols[:TOP_K]
+   # OSSFS-DD selector
+    ossfs_selector = OSSFS_DD(
+        feature_names = feat_cols,
+        k1            = 1,
+        k2            = 2,
+        min_selected  = 5,
+        max_selected  = 15
+    )
+    last_dynamic_features = feat_cols[:10]
 
     # Retrain counter
     steps_since_retrain = 0
@@ -277,21 +493,11 @@ def run_walkforward(full_df, stock_sym, feat_cols):
             mi_data = past_data.tail(MI_WINDOW)
 
             if len(mi_data) >= 60:
-                # Remove trend features from MI selection pool
-                dynamic_pool = [
-                    f for f in feat_cols
-                    if f not in EXCLUDE_FROM_DYNAMIC
-                ]
-                X_mi  = mi_data[dynamic_pool].values
-                y_mi  = mi_data[TARGET].values
-
-                mi_scores = calculate_mi_scores(
-                X_mi, y_mi, dynamic_pool
+                selected, info = ossfs_selector.select(
+                    mi_data, steps_since_retrain
                 )
-                last_mi_scores        = mi_scores
-                last_dynamic_features = select_top_features(
-                    mi_scores, TOP_K
-                )
+                if selected:
+                    last_dynamic_features = selected
 
             # ── Train STATIC on all past data ──────────
             X_all = past_data[feat_cols].values
@@ -307,7 +513,6 @@ def run_walkforward(full_df, stock_sym, feat_cols):
             X_dyn = past_data[last_dynamic_features].values
             new_dynamic = train_xgboost(X_dyn, y_all)
             X_dyn, y_all,
-            mi_scores  = last_mi_scores,
             feat_names = feat_cols
             
             if new_dynamic is not None:
