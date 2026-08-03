@@ -1,6 +1,6 @@
 Metric,Static_XGB,Dynamic_XGB,Difference
-Accuracy,56.18,57.42,1.25
-F1,56.08,57.39,1.32
-Precision,57.54,58.73,1.19
-Recall,56.18,57.42,1.25
-Coverage,90.37,90.89,0.52
+Accuracy,76.41,80.01,3.6
+F1,76.26,79.83,3.57
+Precision,76.41,80.17,3.76
+Recall,76.41,80.01,3.6
+Coverage,100.0,100.0,0.0

@@ -182,23 +182,25 @@ def stream_one_stock(full_df, stock_sym, feat_cols):
     print(f"  Total rows : {len(df):,}")
     print(f"  Streaming one sample at a time...")
 
-    # ── Static model ───────────────────────────────────
+    # Static model — SRP on ALL features
     static_model = (
-        preprocessing.StandardScaler() |
-        tree.HoeffdingTreeClassifier(
-            grace_period = 50,
-            delta        = 0.01
-        )
+    preprocessing.StandardScaler() |
+    ensemble.SRPClassifier(
+        model   = tree.HoeffdingTreeClassifier(),
+        n_models= 10,
+        seed    = 42
     )
+)
 
-    # ── Dynamic model ──────────────────────────────────
+    # Dynamic model — SRP on MI-selected features
     dynamic_model = (
-        preprocessing.StandardScaler() |
-        tree.HoeffdingTreeClassifier(
-            grace_period = 50,
-            delta        = 0.01
-        )
+    preprocessing.StandardScaler() |
+    ensemble.SRPClassifier(
+        model   = tree.HoeffdingTreeClassifier(),
+        n_models= 10,
+        seed    = 42
     )
+)
 
     # ── Feature selector ───────────────────────────────
     selector = StreamingFeatureSelector(

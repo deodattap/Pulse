@@ -56,9 +56,8 @@ def make_models():
         'SAMKNN': (
             preprocessing.StandardScaler() |
             neighbors.KNNClassifier(
-                n_neighbors=5,
-                window_size=500
-            )
+         n_neighbors=5
+         )
         ),
         'SRPClassifier': (
             preprocessing.StandardScaler() |

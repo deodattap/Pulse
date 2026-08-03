@@ -53,10 +53,10 @@ def load_results():
     print("="*55)
 
     results_path = os.path.join(
-        LOGS_DIR, 'nse_walkforward_ALL.csv'
+        LOGS_DIR, 'streaming_ALL.csv'
     )
     metrics_path = os.path.join(
-        METRICS_DIR, 'nse_final_results.csv'
+        METRICS_DIR, 'streaming_results.csv'
     )
 
     if not os.path.exists(results_path):
@@ -96,9 +96,9 @@ def table_overall(df, metrics_df):
     y_static = df['static_pred'].values
     y_dyn    = df['dynamic_pred'].values
 
-    sm = y_static  != -1
-    dm = y_dynamic = y_dyn != -1
-
+    sm = y_static != -1
+    dm = y_dyn    != -1
+    
     def met(yt, yp, mask):
         yt2 = yt[mask]; yp2 = yp[mask]
         return {
