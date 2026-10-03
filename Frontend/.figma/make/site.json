@@ -1,0 +1,10 @@
+{
+  "description": "An AI-driven platform for Indian stock market analysis and prediction, offering dynamic insights and performance metrics for informed trading decisions.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
