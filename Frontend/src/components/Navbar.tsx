@@ -14,7 +14,6 @@ const NAV_ITEMS: { label: string; page: Page }[] = [
   { label: "Stock Analysis", page: "stock" },
   { label: "Prediction", page: "prediction" },
   { label: "Features", page: "features" },
-  { label: "Market Regime", page: "regime" },
   { label: "Research", page: "research" },
 ];
 

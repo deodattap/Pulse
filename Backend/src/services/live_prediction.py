@@ -252,8 +252,14 @@ def _compute_indicators(hist: pd.DataFrame) -> pd.DataFrame:
 
     hist['Rolling_Mean_Return'] = hist['Daily_Return'].rolling(10).mean()
     hist['Rolling_Median_Return'] = hist['Daily_Return'].rolling(10).median()
+
+    # Save the latest two raw market rows BEFORE Binary_Target shift removes them.
+    # Features are fully computed here; only Binary_Target will be NaN for last 20 rows.
+    latest_raw_row = hist.iloc[-1].copy()
+    previous_raw_row = hist.iloc[-2].copy()
+
     hist['Binary_Target'] = (close.shift(-20) > close).astype(int)
-    return hist.dropna().reset_index(drop=True)
+    return hist.dropna().reset_index(drop=True), latest_raw_row, previous_raw_row
 
 
 def _select_features(hist: pd.DataFrame, feat_cols):
@@ -293,7 +299,7 @@ def _select_features(hist: pd.DataFrame, feat_cols):
     return selected_features, feature_importances
 
 
-def _train_srp(hist: pd.DataFrame, selected_features):
+def _train_srp(hist: pd.DataFrame, selected_features, latest_raw_row: pd.Series = None):
     from river import tree, ensemble, preprocessing
 
     srp_model = (
@@ -305,14 +311,16 @@ def _train_srp(hist: pd.DataFrame, selected_features):
         )
     )
 
-    train_data = hist.iloc[:-1]
-    for _, row in train_data.iterrows():
+    # Train on all rows in hist (which has already had NaN rows dropped)
+    for _, row in hist.iterrows():
         x = {f: float(row[f]) for f in selected_features}
         y = int(row['Binary_Target'])
         srp_model.learn_one(x, y)
 
-    latest_row = hist.iloc[-1]
-    x_pred = {f: float(latest_row[f]) for f in selected_features}
+    # Use the preserved latest raw row for prediction (today's features, not
+    # the ~20-trading-day-old row that results from shift(-20) + dropna).
+    pred_row = latest_raw_row if latest_raw_row is not None else hist.iloc[-1]
+    x_pred = {f: float(pred_row[f]) for f in selected_features}
     pred = srp_model.predict_one(x_pred)
     proba = srp_model.predict_proba_one(x_pred)
 
@@ -350,16 +358,19 @@ def run_live_prediction(ticker: str) -> dict:
     if len(hist) < 100:
         raise ValueError(f'Not enough data for {ticker}.')
 
-    hist = _compute_indicators(hist)
+    hist, latest_raw_row, previous_raw_row = _compute_indicators(hist)
     if len(hist) < 60:
         raise ValueError('Not enough clean data after indicator computation.')
 
     feat_cols = [f for f in FEAT_COLS if f in hist.columns]
     selected_features, feature_importances = _select_features(hist, feat_cols)
-    pred_class, confidence = _train_srp(hist, selected_features)
+    pred_class, confidence = _train_srp(hist, selected_features, latest_raw_row)
 
-    latest = hist.iloc[-1]
-    prev_close = float(hist['Close'].iloc[-2])
+    # Use latest_raw_row for price/date so we report today's market data,
+    # not the ~20-trading-day-old row that survived shift(-20) + dropna().
+    # Use previous_raw_row for prev_close so the day-over-day change is accurate.
+    latest = latest_raw_row
+    prev_close = float(previous_raw_row['Close'])
     close = float(latest['Close'])
     change = close - prev_close
     pct = (change / prev_close) * 100 if prev_close else 0.0
@@ -380,9 +391,9 @@ def run_live_prediction(ticker: str) -> dict:
         })
 
     indicators = {
-        f: float(hist[f].iloc[-1])
+        f: float(latest_raw_row[f])
         for f in feat_cols
-        if f in hist.columns and pd.notna(hist[f].iloc[-1])
+        if f in latest_raw_row.index and pd.notna(latest_raw_row[f])
     }
 
     explanation = generate_explanation(

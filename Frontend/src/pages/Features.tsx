@@ -67,7 +67,7 @@ export default function Features() {
             <BarChart data={ranking.slice(0, 10)} layout="vertical" margin={{ top: 0, right: 40, left: 72, bottom: 0 }}>
               <XAxis type="number" tick={{ fontSize: 10, fill: "#94A3B8" }} tickLine={false} axisLine={false} tickFormatter={v => `${v}%`} />
               <YAxis type="category" dataKey="feature" tick={{ fontSize: 10, fill: "var(--foreground)", fontFamily: "JetBrains Mono" }} tickLine={false} axisLine={false} width={68} />
-              <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: number | string | undefined) => [`${Number(v ?? 0).toFixed(1)}%`, "Frequency"]} />
+              <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: unknown) => [`${Number(v as number).toFixed(1)}%`, "Frequency"]} />
               <Bar dataKey="frequency" radius={[0, 3, 3, 0]}>
                 {ranking.slice(0, 10).map((_, i) => (
                   <Cell key={i} fill={COLORS[Math.min(i, COLORS.length - 1)]} />

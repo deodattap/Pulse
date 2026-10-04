@@ -4,7 +4,6 @@ import Ticker from "./components/Ticker";
 import Overview from "./pages/Overview";
 import StockPage from "./pages/StockPage";
 import Features from "./pages/Features";
-import Regime from "./pages/Regime";
 import Research from "./pages/Research";
 import { fetchOverview, type OverviewResponse, type StockQuote } from "./api";
 import { PulseContext } from "./PulseContext";
@@ -70,7 +69,6 @@ export default function App() {
             />
           )}
           {page === "features" && <Features />}
-          {page === "regime" && <Regime />}
           {page === "research" && <Research />}
         </main>
 

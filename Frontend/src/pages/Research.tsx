@@ -53,7 +53,7 @@ export default function Research() {
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" strokeOpacity={0.6} vertical={false} />
                 <XAxis dataKey="metric" tick={{ fontSize: 11, fill: "var(--foreground)", fontFamily: "Manrope" }} tickLine={false} axisLine={false} />
                 <YAxis tick={{ fontSize: 9, fill: "#94A3B8" }} tickLine={false} axisLine={false} domain={[60, 90]} tickFormatter={v => `${v}%`} />
-                <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: number | string | undefined) => [`${Number(v ?? 0).toFixed(1)}%`]} />
+                <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: unknown) => [`${Number(v as number).toFixed(1)}%`]} />
                 <Legend wrapperStyle={{ fontSize: 11, fontFamily: "Inter" }} />
                 <Bar dataKey="srp" name="Static SRP" fill="#CBD5E1" radius={[3, 3, 0, 0]} />
                 <Bar dataKey="pulse" name="PULSE (DFS+SRP)" fill="var(--accent)" radius={[3, 3, 0, 0]} />
@@ -70,7 +70,7 @@ export default function Research() {
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" strokeOpacity={0.6} vertical={false} />
                 <XAxis dataKey="year" tick={{ fontSize: 11, fill: "#94A3B8" }} tickLine={false} axisLine={false} />
                 <YAxis tick={{ fontSize: 9, fill: "#94A3B8" }} tickLine={false} axisLine={false} domain={[60, 90]} tickFormatter={v => `${v}%`} />
-                <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: number | string | undefined) => [`${Number(v ?? 0).toFixed(1)}%`]} />
+                <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: unknown) => [`${Number(v as number).toFixed(1)}%`]} />
                 <Legend wrapperStyle={{ fontSize: 11, fontFamily: "Inter" }} />
                 <Line type="monotone" dataKey="srp_acc" name="Static SRP" stroke="#CBD5E1" strokeWidth={2} dot={{ r: 3, fill: "#CBD5E1" }} />
                 <Line type="monotone" dataKey="pulse_acc" name="PULSE" stroke="var(--accent)" strokeWidth={2} dot={{ r: 3, fill: "var(--accent)" }} />
@@ -131,7 +131,10 @@ export default function Research() {
 
       {data?.financial?.length ? (
         <div className="card p-5">
-          <div className="section-label mb-3">Financial metrics</div>
+          <div className="section-label mb-1">Simulated Portfolio Performance</div>
+          <p className="text-xs mb-3" style={{ color: "var(--muted-foreground)", fontFamily: "Inter" }}>
+            Fixed ±0.5% per-trade simulation · Not actual trading returns
+          </p>
           <table className="data-table">
             <thead>
               <tr>

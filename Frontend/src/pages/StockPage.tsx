@@ -329,7 +329,7 @@ export default function StockPage({ symbol, onChangeSymbol }: StockPageProps) {
                       <YAxis tick={{ fontSize: 10, fill: "#94A3B8", fontFamily: "JetBrains Mono" }} tickLine={false} axisLine={false} domain={["auto", "auto"]} tickFormatter={v => `₹${v.toFixed(0)}`} />
                       <Tooltip
                         contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 12 }}
-                        formatter={(v: number | string | undefined) => [`₹${Number(v ?? 0).toFixed(2)}`, stock.symbol]}
+                        formatter={(v: unknown) => [`₹${Number(v as number).toFixed(2)}`, stock.symbol]}
                       />
                       <Area type="monotone" dataKey="value" stroke={stock.up ? "#16A34A" : "#DC2626"} strokeWidth={1.5} fill="url(#stockGrad)" dot={false} />
                     </AreaChart>
@@ -346,7 +346,7 @@ export default function StockPage({ symbol, onChangeSymbol }: StockPageProps) {
                       <YAxis tick={{ fontSize: 10, fill: "#94A3B8", fontFamily: "JetBrains Mono" }} tickLine={false} axisLine={false} tickFormatter={v => fmtVol(v)} />
                       <Tooltip
                         contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }}
-                        formatter={(v: number | string | undefined) => [fmtVol(Number(v ?? 0)), "Volume"]}
+                        formatter={(v: unknown) => [fmtVol(Number(v as number)), "Volume"]}
                       />
                       <Bar dataKey="volume" fill="#94A3B8" opacity={0.6} radius={[1, 1, 0, 0]} />
                     </BarChart>
@@ -461,7 +461,7 @@ export default function StockPage({ symbol, onChangeSymbol }: StockPageProps) {
                 <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" strokeOpacity={0.6} vertical={false} />
                 <XAxis dataKey="date" tick={{ fontSize: 10, fill: "#94A3B8", fontFamily: "Inter" }} tickLine={false} axisLine={false} interval={Math.max(1, Math.floor(chartData.length / 8))} tickFormatter={d => String(d).slice(5)} />
                 <YAxis tick={{ fontSize: 10, fill: "#94A3B8", fontFamily: "JetBrains Mono" }} tickLine={false} axisLine={false} domain={["auto", "auto"]} tickFormatter={v => `₹${v.toFixed(0)}`} />
-                <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 12 }} formatter={(v: number | string | undefined) => [`₹${Number(v ?? 0).toFixed(2)}`]} />
+                <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 12 }} formatter={(v: unknown) => [`₹${Number(v as number).toFixed(2)}`]} />
                 <defs>
                   <linearGradient id="chartGradFull" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor={stock.up ? "#16A34A" : "#DC2626"} stopOpacity={0.12} />
@@ -567,7 +567,7 @@ export default function StockPage({ symbol, onChangeSymbol }: StockPageProps) {
                           <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" strokeOpacity={0.5} vertical={false} />
                           <XAxis dataKey="date" tick={{ fontSize: 9, fill: "#94A3B8" }} tickLine={false} axisLine={false} interval={9} tickFormatter={d => String(d).slice(5)} />
                           <YAxis tick={{ fontSize: 9, fill: "#94A3B8" }} tickLine={false} axisLine={false} domain={["auto", "auto"]} tickFormatter={v => `₹${v.toFixed(0)}`} />
-                          <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: number | string | undefined) => [`₹${Number(v ?? 0).toFixed(2)}`]} />
+                          <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: unknown) => [`₹${Number(v as number).toFixed(2)}`]} />
                           <Area type="monotone" dataKey="close" stroke={stock.up ? "#16A34A" : "#DC2626"} strokeWidth={1.5} fill="none" dot={false} />
                         </AreaChart>
                       </ResponsiveContainer>
@@ -763,7 +763,7 @@ function StockResearchPanel({ symbol }: { symbol: string }) {
             <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" strokeOpacity={0.6} vertical={false} />
             <XAxis dataKey="year" tick={{ fontSize: 10, fill: "#94A3B8" }} tickLine={false} axisLine={false} />
             <YAxis tick={{ fontSize: 10, fill: "#94A3B8" }} tickLine={false} axisLine={false} domain={[60, 90]} tickFormatter={v => `${v}%`} />
-            <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: number | string | undefined) => [`${Number(v ?? 0).toFixed(1)}%`]} />
+            <Tooltip contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }} formatter={(v: unknown) => [`${Number(v as number).toFixed(1)}%`]} />
             <Bar dataKey="srp_acc" name="Static SRP" fill="#CBD5E1" radius={[3, 3, 0, 0]} />
             <Bar dataKey="pulse_acc" name="PULSE" fill="var(--accent)" radius={[3, 3, 0, 0]} />
           </BarChart>

@@ -67,7 +67,7 @@ export default function Regime() {
               <YAxis tick={{ fontSize: 9, fill: "#94A3B8" }} tickLine={false} axisLine={false} domain={[60, 90]} tickFormatter={v => `${v}%`} />
               <Tooltip
                 contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 11 }}
-                formatter={(v: number | string | undefined, _: unknown, props: { payload?: { regime?: string } }) => [`${Number(v ?? 0).toFixed(1)}%`, props?.payload?.regime || "Accuracy"]}
+                formatter={(v: unknown, _: unknown, props: { payload?: { regime?: string } }) => [`${Number(v as number).toFixed(1)}%`, props?.payload?.regime || "Accuracy"]}
               />
               <Bar dataKey="accuracy" radius={[3, 3, 0, 0]}>
                 {quarters.map((d, i) => (

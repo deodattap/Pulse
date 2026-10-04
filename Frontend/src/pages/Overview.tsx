@@ -133,7 +133,7 @@ export default function Overview({ onSelectStock }: OverviewProps) {
                   <Tooltip
                     contentStyle={{ background: "var(--card)", border: "1px solid var(--border)", borderRadius: 4, fontSize: 12, fontFamily: "JetBrains Mono" }}
                     labelStyle={{ color: "var(--muted-foreground)", fontSize: 11 }}
-                    formatter={(v: number | string | undefined) => [`${Number(v ?? 0).toFixed(2)}`, "NIFTY 50"]}
+                    formatter={(v: unknown) => [`${Number(v as number).toFixed(2)}`, "NIFTY 50"]}
                   />
                   <Area type="monotone" dataKey="value" stroke="#1D4ED8" strokeWidth={1.5} fill="url(#niftyGrad)" dot={false} />
                 </AreaChart>
