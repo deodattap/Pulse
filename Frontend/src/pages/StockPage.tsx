@@ -22,6 +22,7 @@ const STOCK_TABS = ["Overview", "Chart", "Prediction", "Technicals", "Features",
 type StockPageProps = {
   symbol: string;
   onChangeSymbol: (s: string) => void;
+  initialTab?: string;
 };
 
 function fmtVol(v: number) {
@@ -30,12 +31,16 @@ function fmtVol(v: number) {
   return String(v);
 }
 
-export default function StockPage({ symbol, onChangeSymbol }: StockPageProps) {
+export default function StockPage({
+  symbol,
+  onChangeSymbol,
+  initialTab = "Overview",
+}: StockPageProps) {
   const { stocks, overview } = usePulse();
   const researchStocks = overview?.research_stocks || [];
   const isResearch = researchStocks.includes(symbol.toUpperCase());
 
-  const [tab, setTab] = useState("Overview");
+  const [tab, setTab] = useState(initialTab);
   const [range, setRange] = useState("6M");
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -73,6 +78,10 @@ export default function StockPage({ symbol, onChangeSymbol }: StockPageProps) {
       cancelled = true;
     };
   }, [symbol, range]);
+
+  useEffect(() => {
+    setTab(initialTab);
+  }, [initialTab]);
 
   const filtered = query.length > 1
     ? stocks.filter(s => s.symbol.includes(query.toUpperCase()) || s.name.toLowerCase().includes(query.toLowerCase()))
