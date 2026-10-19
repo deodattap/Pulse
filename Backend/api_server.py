@@ -133,7 +133,7 @@ def fetch_quotes(symbols: list[str]) -> list[dict]:
     import pandas as pd
 
     tickers = [f'{s}.NS' for s in symbols]
-    
+
     try:
         raw = yf.download(
             tickers,
@@ -351,19 +351,19 @@ def stock_history(symbol: str, range: str = Query('1y')):
         rows = price_history(symbol, period=period)
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Live data unavailable: {str(e)}")
-    
+
     if not rows or len(rows) == 0:
         raise HTTPException(status_code=404, detail="Live data unavailable for this stock")
-    
+
     quotes = fetch_quotes(POPULAR_STOCKS)
     quote = next((q for q in quotes if q['symbol'].upper() == symbol.upper()), None)
-    
+
     if quote is None:
         name, sector = _stock_meta(symbol)
         last = rows[-1] if rows else None
         if last is None:
             raise HTTPException(status_code=404, detail="Live data unavailable for this stock")
-        
+
         quote = {
             'symbol': symbol.upper(),
             'name': name,
@@ -417,8 +417,6 @@ def historical(symbol: str, date: Optional[str] = None):
         return historical_prediction(symbol, date)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
-
-
 @app.post('/api/predict')
 def predict(body: PredictRequest):
     ticker = body.ticker.upper().strip().replace('.NS', '')
@@ -438,10 +436,7 @@ def predict(body: PredictRequest):
             hist = historical_prediction(ticker, body.date)
             return hist
         except ValueError as e:
-            if mode == 'historical':
-                raise HTTPException(status_code=404, detail=str(e))
-            # fall through to live
-
+            raise HTTPException(status_code=404, detail=str(e))
     cache_key = ticker
     now = time.time()
     cached = _pred_cache.get(cache_key)

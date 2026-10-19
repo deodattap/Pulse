@@ -361,18 +361,19 @@ def historical_prediction(stock: str, date: Optional[str] = None):
 
     dates = pd.to_datetime(stock_data['predict_date']).dt.strftime('%Y-%m-%d').tolist()
     if date:
-        match = stock_data[pd.to_datetime(stock_data['predict_date']).dt.strftime('%Y-%m-%d') == date]
+        match = stock_data[
+            pd.to_datetime(stock_data['predict_date']).dt.strftime('%Y-%m-%d') == date
+        ]
+
         if len(match) == 0:
-            # nearest previous date
-            before = stock_data[pd.to_datetime(stock_data['predict_date']) <= pd.Timestamp(date)]
-            if len(before) == 0:
-                match = stock_data.iloc[[-1]]
-            else:
-                match = before.iloc[[-1]]
+            raise ValueError(
+                f"No historical prediction available for {stock.upper()} on {date}. "
+                f"Choose a date from the available historical dates."
+            )
+
         row = match.iloc[0]
     else:
         row = stock_data.iloc[-1]
-
     pred_val = int(row['dynamic_pred'])
     conf_val = float(row['dynamic_confidence'])
     actual_val = int(row['actual_target'])
