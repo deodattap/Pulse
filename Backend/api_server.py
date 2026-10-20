@@ -1,9 +1,6 @@
+
 # ============================================================
-# FastAPI server that exposes the existing ML pipeline and
-# research evaluation results to the React frontend.
-#
-# Run from the Backend folder:
-#   python -m uvicorn api_server:app --host 127.0.0.1 --port 8000
+# FastAPI server for PULSE stock market prediction
 # ============================================================
 
 from __future__ import annotations
@@ -12,6 +9,7 @@ import os
 import sys
 import time
 from typing import Optional
+from datetime import datetime
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -19,6 +17,7 @@ from pydantic import BaseModel
 
 BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.join(BACKEND_DIR, 'src')
+
 for p in (BACKEND_DIR, SRC_DIR):
     if p not in sys.path:
         sys.path.insert(0, p)
@@ -73,6 +72,7 @@ INDEX_TICKERS = [
 _quote_cache = {'ts': 0.0, 'data': None}
 _index_cache = {'ts': 0.0, 'data': None}
 _pred_cache = {}
+
 QUOTE_TTL = 300
 PRED_TTL = 1800
 
@@ -80,7 +80,7 @@ PRED_TTL = 1800
 class PredictRequest(BaseModel):
     ticker: str
     date: Optional[str] = None
-    mode: Optional[str] = None  # 'live' | 'historical' | auto
+    mode: Optional[str] = None
 
 
 def _fmt_volume(v: float) -> str:
@@ -96,17 +96,22 @@ def _fmt_volume(v: float) -> str:
 
 
 def _stock_meta(symbol: str):
-    name, sector = STOCK_META.get(symbol.upper(), (symbol.upper(), 'Equity'))
+    name, sector = STOCK_META.get(
+        symbol.upper(), (symbol.upper(), 'Equity')
+    )
     return name, sector
 
 
 def _ohlcv_frame(raw, ticker: str):
     import pandas as pd
+
     if raw is None or getattr(raw, 'empty', True):
         return None
+
     if isinstance(raw.columns, pd.MultiIndex):
         level0 = set(raw.columns.get_level_values(0))
         level1 = set(raw.columns.get_level_values(1))
+
         if ticker in level0:
             df = raw[ticker]
         elif ticker in level1:
@@ -115,18 +120,26 @@ def _ohlcv_frame(raw, ticker: str):
             return None
     else:
         df = raw
+
     if 'Close' not in df.columns:
         return None
+
     return df.dropna(subset=['Close'])
 
 
 def fetch_quotes(symbols: list[str]) -> list[dict]:
     now = time.time()
-    if _quote_cache['data'] is not None and now - _quote_cache['ts'] < QUOTE_TTL:
+
+    if (
+        _quote_cache['data'] is not None
+        and now - _quote_cache['ts'] < QUOTE_TTL
+    ):
         cached = {s['symbol']: s for s in _quote_cache['data']}
         hit = [cached[s] for s in symbols if s in cached]
+
         if len(hit) == len(symbols):
             return hit
+
         return _quote_cache['data']
 
     import yfinance as yf
@@ -143,27 +156,39 @@ def fetch_quotes(symbols: list[str]) -> list[dict]:
             threads=True,
             progress=False,
         )
-    except Exception as e:
-        # If yfinance fails completely, return empty list instead of fallback data
+    except Exception:
         return []
 
     out = []
+
     for sym in symbols:
-        t = f'{sym}.NS'
+        ticker = f'{sym}.NS'
+
         try:
-            df = _ohlcv_frame(raw, t)
+            df = _ohlcv_frame(raw, ticker)
+
             if df is None or len(df) < 2:
                 continue
+
             last = df.iloc[-1]
             prev = df.iloc[-2]
+
             close = float(last['Close'])
             prev_c = float(prev['Close'])
             change = close - prev_c
             pct = change / prev_c * 100 if prev_c else 0
-            vol = float(last['Volume']) if 'Volume' in df.columns and pd.notna(last.get('Volume')) else 0
+
+            vol = (
+                float(last['Volume'])
+                if 'Volume' in df.columns and pd.notna(last.get('Volume'))
+                else 0
+            )
+
             high52 = float(df['High'].max()) if 'High' in df.columns else close
             low52 = float(df['Low'].min()) if 'Low' in df.columns else close
+
             name, sector = _stock_meta(sym)
+
             out.append({
                 'symbol': sym,
                 'name': name,
@@ -188,43 +213,55 @@ def fetch_quotes(symbols: list[str]) -> list[dict]:
     if out:
         _quote_cache['ts'] = now
         _quote_cache['data'] = out
+
     return out
 
 
 def fetch_indices() -> list[dict]:
     now = time.time()
-    if _index_cache['data'] is not None and now - _index_cache['ts'] < QUOTE_TTL:
+
+    if (
+        _index_cache['data'] is not None
+        and now - _index_cache['ts'] < QUOTE_TTL
+    ):
         return _index_cache['data']
 
     import yfinance as yf
 
     out = []
     tickers = [t for t, _ in INDEX_TICKERS]
-    names = {t: n for t, n in INDEX_TICKERS}
+
     try:
         raw = yf.download(
-            tickers, period='5d', group_by='ticker',
-            auto_adjust=True, threads=True, progress=False,
+            tickers,
+            period='5d',
+            group_by='ticker',
+            auto_adjust=True,
+            threads=True,
+            progress=False,
         )
     except Exception:
-        return []  # Return empty list instead of cached fallback data
+        return []
 
-    for t, name in INDEX_TICKERS:
+    for ticker, name in INDEX_TICKERS:
         try:
-            df = _ohlcv_frame(raw, t)
+            df = _ohlcv_frame(raw, ticker)
+
             if df is None or len(df) < 2:
                 continue
+
             last = float(df['Close'].iloc[-1])
             prev = float(df['Close'].iloc[-2])
+
             change = last - prev
             pct = change / prev * 100 if prev else 0
-            decimals = 2 if last < 1000 else 2
+
             out.append({
                 'name': name,
-                'ticker': t,
-                'value': f'{last:,.{decimals}f}',
+                'ticker': ticker,
+                'value': f'{last:,.2f}',
                 'value_raw': round(last, 2),
-                'change': f'{change:+.{decimals}f}',
+                'change': f'{change:+.2f}',
                 'pct': f'{pct:+.2f}',
                 'up': change >= 0,
             })
@@ -234,16 +271,23 @@ def fetch_indices() -> list[dict]:
     if out:
         _index_cache['ts'] = now
         _index_cache['data'] = out
+
     return out
 
 
 def nifty_history(days: int = 180):
     import yfinance as yf
-    hist = yf.Ticker('^NSEI').history(period='1y', auto_adjust=True)
+
+    hist = yf.Ticker('^NSEI').history(
+        period='1y', auto_adjust=True
+    )
+
     if hist is None or hist.empty:
         return []
+
     hist = hist.tail(days).reset_index()
     rows = []
+
     for _, row in hist.iterrows():
         rows.append({
             'date': str(row['Date'].date()) if hasattr(row['Date'], 'date') else str(row['Date'])[:10],
@@ -254,12 +298,19 @@ def nifty_history(days: int = 180):
             'close': round(float(row['Close']), 2),
             'volume': int(row['Volume']) if row['Volume'] == row['Volume'] else 0,
         })
+
     return rows
 
 
 def price_history(symbol: str, period: str = '1y'):
-    hist, _ = download_history(symbol, period=period)
+    hist, _ = download_history(
+        symbol,
+        period=period,
+        min_rows=1,
+    )
+
     rows = []
+
     for _, row in hist.iterrows():
         rows.append({
             'date': str(row['Date'].date()) if hasattr(row['Date'], 'date') else str(row['Date'])[:10],
@@ -269,21 +320,26 @@ def price_history(symbol: str, period: str = '1y'):
             'close': round(float(row['Close']), 2),
             'volume': int(row['Volume']),
         })
+
     return rows
 
 
 def sector_performance(stocks: list[dict]) -> list[dict]:
     buckets = {}
-    for s in stocks:
-        sector = s.get('sector') or 'Other'
-        buckets.setdefault(sector, []).append(s['pct'])
+
+    for stock in stocks:
+        sector = stock.get('sector') or 'Other'
+        buckets.setdefault(sector, []).append(stock['pct'])
+
     out = []
+
     for name, pcts in buckets.items():
         out.append({
             'name': name,
             'change': round(sum(pcts) / len(pcts), 2),
             'stocks': len(pcts),
         })
+
     out.sort(key=lambda x: -abs(x['change']))
     return out
 
@@ -291,6 +347,7 @@ def sector_performance(stocks: list[dict]) -> list[dict]:
 @app.get('/api/health')
 def health():
     df = load_streaming_results()
+
     return {
         'ok': True,
         'research_rows': 0 if df is None else int(len(df)),
@@ -302,11 +359,10 @@ def health():
 def overview():
     try:
         quotes = fetch_quotes(POPULAR_STOCKS)
+        quote_error = None
     except Exception as e:
         quotes = []
         quote_error = str(e)
-    else:
-        quote_error = None
 
     try:
         indices = fetch_indices()
@@ -318,7 +374,11 @@ def overview():
     except Exception:
         chart = []
 
-    nifty = next((i for i in indices if i['name'] == 'NIFTY 50'), None)
+    nifty = next(
+        (i for i in indices if i['name'] == 'NIFTY 50'),
+        None,
+    )
+
     return {
         'indices': indices,
         'stocks': quotes,
@@ -335,53 +395,79 @@ def overview():
 @app.get('/api/stocks')
 def stocks():
     quotes = fetch_quotes(POPULAR_STOCKS)
+
     return {
         'stocks': quotes,
         'research_stocks': research_stock_list(),
         'popular': POPULAR_STOCKS,
-        'all_available': POPULAR_STOCKS,  # Add this for reference
+        'all_available': POPULAR_STOCKS,
     }
 
 
 @app.get('/api/stocks/{symbol}/history')
-def stock_history(symbol: str, range: str = Query('1y')):
-    period_map = {'1M': '1mo', '3M': '3mo', '6M': '6mo', '1Y': '1y', '1y': '1y', '2y': '2y'}
-    period = period_map.get(range, '1y')
-    try:
-        rows = price_history(symbol, period=period)
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=f"Live data unavailable: {str(e)}")
+def stock_history(symbol: str, range: str = Query('1Y')):
+    period_map = {
+        '1M': '1mo',
+        '3M': '3mo',
+        '6M': '6mo',
+        '1Y': '1y',
+        '2Y': '2y',
+    }
 
-    if not rows or len(rows) == 0:
-        raise HTTPException(status_code=404, detail="Live data unavailable for this stock")
+    requested_range = range.upper()
+
+    if requested_range not in period_map:
+        raise HTTPException(
+            status_code=400,
+            detail='Invalid range. Allowed ranges: 1M, 3M, 6M, 1Y, 2Y.',
+        )
+
+    try:
+        rows = price_history(
+            symbol,
+            period=period_map[requested_range],
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=400,
+            detail=f'Live data unavailable: {str(e)}',
+        )
+
+    if not rows:
+        raise HTTPException(
+            status_code=404,
+            detail='Live data unavailable for this stock',
+        )
 
     quotes = fetch_quotes(POPULAR_STOCKS)
-    quote = next((q for q in quotes if q['symbol'].upper() == symbol.upper()), None)
+    quote = next(
+        (q for q in quotes if q['symbol'].upper() == symbol.upper()),
+        None,
+    )
 
     if quote is None:
         name, sector = _stock_meta(symbol)
-        last = rows[-1] if rows else None
-        if last is None:
-            raise HTTPException(status_code=404, detail="Live data unavailable for this stock")
+        last = rows[-1]
 
         quote = {
             'symbol': symbol.upper(),
             'name': name,
             'sector': sector,
-            'price': last['close'] if last else 0,
+            'price': last['close'],
             'change': 0,
             'pct': 0,
             'up': True,
-            'volume': _fmt_volume(last['volume']) if last else '0',
-            'volume_raw': last['volume'] if last else 0,
-            'open': last['open'] if last else 0,
-            'high': last['high'] if last else 0,
-            'low': last['low'] if last else 0,
+            'volume': _fmt_volume(last['volume']),
+            'volume_raw': last['volume'],
+            'open': last['open'],
+            'high': last['high'],
+            'low': last['low'],
             'high52': max((r['high'] for r in rows), default=0),
             'low52': min((r['low'] for r in rows), default=0),
-            'date': last['date'] if last else None,
+            'date': last['date'],
             'research': symbol.upper() in research_stock_list(),
         }
+
     return {'quote': quote, 'history': rows}
 
 
@@ -398,16 +484,20 @@ def research():
 @app.get('/api/features')
 def features(stock: Optional[str] = None):
     data = feature_analysis(stock)
+
     if 'error' in data:
         raise HTTPException(status_code=404, detail=data['error'])
+
     return data
 
 
 @app.get('/api/regime')
 def regime():
     data = regime_analysis()
+
     if 'error' in data:
         raise HTTPException(status_code=404, detail=data['error'])
+
     return data
 
 
@@ -417,13 +507,28 @@ def historical(symbol: str, date: Optional[str] = None):
         return historical_prediction(symbol, date)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+
+
 @app.post('/api/predict')
 def predict(body: PredictRequest):
     ticker = body.ticker.upper().strip().replace('.NS', '')
     research_set = set(research_stock_list())
-    mode = (body.mode or 'auto').lower()
+    mode = (body.mode or 'auto').strip().lower()
+
+    if not ticker:
+        raise HTTPException(
+            status_code=400,
+            detail='Ticker cannot be empty.',
+        )
+
+    if mode not in ('auto', 'live', 'historical'):
+        raise HTTPException(
+            status_code=400,
+            detail='Invalid mode. Allowed modes: auto, live, historical.',
+        )
 
     use_historical = False
+
     if mode == 'historical':
         use_historical = True
     elif mode == 'live':
@@ -432,32 +537,78 @@ def predict(body: PredictRequest):
         use_historical = True
 
     if use_historical:
+        requested_date = body.date
+
+        if requested_date is not None:
+            requested_date = requested_date.strip()
+
+            if not requested_date:
+                raise HTTPException(
+                    status_code=400,
+                    detail='Date cannot be empty.',
+                )
+
+            try:
+                parsed_date = datetime.strptime(
+                    requested_date, '%Y-%m-%d'
+                )
+
+                if parsed_date.strftime('%Y-%m-%d') != requested_date:
+                    raise ValueError
+
+            except ValueError:
+                raise HTTPException(
+                    status_code=400,
+                    detail='Invalid date format. Use YYYY-MM-DD.',
+                )
+
         try:
-            hist = historical_prediction(ticker, body.date)
-            return hist
+            return historical_prediction(ticker, requested_date)
         except ValueError as e:
-            raise HTTPException(status_code=404, detail=str(e))
+            raise HTTPException(
+                status_code=404,
+                detail=str(e),
+            )
+
     cache_key = ticker
     now = time.time()
     cached = _pred_cache.get(cache_key)
+
     if cached and now - cached['ts'] < PRED_TTL:
         return cached['data']
 
     try:
         result = run_live_prediction(ticker)
     except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+        raise HTTPException(
+            status_code=400,
+            detail=str(e),
+        )
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f'Prediction failed: {e}')
+        raise HTTPException(
+            status_code=500,
+            detail=f'Prediction failed: {e}',
+        )
 
     result['mode'] = 'live'
     name, sector = _stock_meta(ticker)
     result['name'] = name
     result['sector'] = sector
-    _pred_cache[cache_key] = {'ts': now, 'data': result}
+
+    _pred_cache[cache_key] = {
+        'ts': now,
+        'data': result,
+    }
+
     return result
 
 
 if __name__ == '__main__':
     import uvicorn
-    uvicorn.run('api_server:app', host='127.0.0.1', port=8000, reload=False)
+
+    uvicorn.run(
+        'api_server:app',
+        host='127.0.0.1',
+        port=8000,
+        reload=False,
+    )

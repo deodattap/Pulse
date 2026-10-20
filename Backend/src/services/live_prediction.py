@@ -334,7 +334,11 @@ def _train_srp(hist: pd.DataFrame, selected_features, latest_raw_row: pd.Series 
     return pred_class, confidence
 
 
-def download_history(ticker: str, period: str = '2y') -> pd.DataFrame:
+def download_history(
+    ticker: str,
+    period: str = '2y',
+    min_rows: int = 30
+) -> pd.DataFrame:
     import yfinance as yf
 
     ticker_sym = ticker.upper().strip()
@@ -343,7 +347,7 @@ def download_history(ticker: str, period: str = '2y') -> pd.DataFrame:
 
     tkr = yf.Ticker(ticker_sym)
     hist = tkr.history(period=period, auto_adjust=True)
-    if hist is None or len(hist) < 30:
+    if hist is None or len(hist) < min_rows:
         raise ValueError(
             f'Not enough data for {ticker}. Check the NSE ticker (e.g. RELIANCE, TCS, INFY).'
         )
